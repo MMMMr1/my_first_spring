@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    <bean id="helloServiceA2" class="service.ServiceA" primary="true"/> УКАЗЫВАЕМ ПУТЬ К КЛАССУ class="service.ServiceA"-->
+    <!--  <bean id="helloServiceA" class="service.ServiceA" />   УКАЗЫВАЕМ ПУТЬ К КЛАССУ class="service.ServiceA"-->
+    <bean id="GenreServiceSpring" class="groupwork.service.GenreService">
+        <constructor-arg index="0" ref="GenreDaoSpring"/>
+    </bean>
+    <bean id="GenreDaoSpring" class="groupwork.dao.db.GenreDaoDB">
+        <constructor-arg index="0" ref="ManagerSpring"/>
+    </bean>
+
+    <bean id="SingerServiceSpring" class="groupwork.service.SingerService">
+        <constructor-arg index="0" ref="SingerDaoSpring"/>
+    </bean>
+    <bean id="SingerDaoSpring" class="groupwork.dao.db.SingerDaoDB">
+        <constructor-arg index="0" ref="ManagerSpring"/>
+    </bean>
+
+    <bean id="VoteServiceSpring" class="groupwork.service.VoteService">
+        <constructor-arg index="0" ref="VoteDaoSpring"/>
+        <constructor-arg index="1" ref="SingerServiceSpring"/>
+        <constructor-arg index="2" ref="GenreServiceSpring"/>
+    </bean>
+    <bean id="VoteDaoSpring" class="groupwork.dao.db.VoteDaoDB">
+        <constructor-arg index="0" ref="ManagerSpring"/>
+    </bean>
+    <bean id="StatisticsServiceSpring" class="groupwork.service.StatisticsService">
+        <constructor-arg index="0" ref="VoteServiceSpring"/>
+        <constructor-arg index="1" ref="SingerServiceSpring"/>
+        <constructor-arg index="2" ref="GenreServiceSpring"/>
+    </bean>
+
+    <bean id="ManagerSpring" class="groupwork.dao.db.orm.manager.Manager"/>
+
+
+
+</beans>
