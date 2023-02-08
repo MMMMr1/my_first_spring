@@ -26,7 +26,7 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public List<SingerDTO> getAll() {
+    public List<SingerDTO> get() {
         List<Singer> singerList = dao.get();
 
         List<SingerDTO>list = new ArrayList<>();
@@ -73,7 +73,7 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public SingerDTO getAll(long id) {
+    public SingerDTO get(long id) {
         Singer singerEntity = this.dao.get(id);
         return new SingerDTO(singerEntity.getName(), singerEntity.getId());
 

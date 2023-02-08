@@ -7,3 +7,4 @@ application.properties
 mail.properties
 application.properties
 mail.properties
+persistence.xml

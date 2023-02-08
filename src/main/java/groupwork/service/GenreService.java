@@ -26,7 +26,7 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public List<GenreDTO> getAll() {
+    public List<GenreDTO> get() {
         List<Genre> genreList = dao.get();
 
         List<GenreDTO> list = new ArrayList<>();
@@ -82,7 +82,7 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public GenreDTO getAll(long id) {
+    public GenreDTO get(long id) {
         Genre genreEntity = this.dao.get(id);
         return new GenreDTO(genreEntity.getName(), genreEntity.getId());
     }

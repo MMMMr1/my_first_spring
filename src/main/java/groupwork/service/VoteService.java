@@ -39,12 +39,12 @@ public class VoteService implements IVoteService {
         String message = savedVoiceDTO.getMessage();
 
         long  singer_id = savedVoiceDTO.getSinger();
-        SingerDTO s = singerService.getAll(singer_id);
+        SingerDTO s = singerService.get(singer_id);
         Singer singer = new Singer(s.getId(), s.getName());
 
         List<Genre> genres = new ArrayList<>();
         for (long genre_id : savedVoiceDTO.getGenre()) {
-            GenreDTO genreDTO = genreService.getAll(genre_id);
+            GenreDTO genreDTO = genreService.get(genre_id);
             genres.add(new Genre(genreDTO.getId(), genreDTO.getName()));
         }
 

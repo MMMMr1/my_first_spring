@@ -8,7 +8,7 @@ public interface ISingerService {
 
     boolean check(long number);
 
-    List<SingerDTO> getAll();
+    List<SingerDTO> get();
 
 //    void delete(SingerDTO singerDTO);
     void delete(long id);
@@ -16,5 +16,5 @@ public interface ISingerService {
     void create(SingerDTO singerDTO);
 
     void update(long id, SingerDTO singerDTO);
-    SingerDTO getAll(long id);
+    SingerDTO get(long id);
 }

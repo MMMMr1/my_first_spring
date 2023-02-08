@@ -37,19 +37,19 @@ public class MainSpring {
         genreServiceSpring.create(new GenreDTO("jazz3"));
         genreServiceSpring.create(new GenreDTO("jazz4"));
         logger.log(Level.INFO, "-----------------> getAll GENRE");
-        System.out.println(genreServiceSpring.getAll());
+        System.out.println(genreServiceSpring.get());
         System.out.println();
         logger.log(Level.INFO, "-----------------> update GENRE");
         genreServiceSpring.update(2,new GenreDTO("pop"));
-        System.out.println(genreServiceSpring.getAll());
+        System.out.println(genreServiceSpring.get());
         System.out.println();
         logger.log(Level.INFO, "-----------------> check GENRE");
         System.out.println(genreServiceSpring.check(2));
-        System.out.println(genreServiceSpring.getAll(2));
+        System.out.println(genreServiceSpring.get(2));
         System.out.println();
         logger.log(Level.INFO, "-----------------> delete GENRE");
         genreServiceSpring.delete(4);
-        System.out.println(genreServiceSpring.getAll());
+        System.out.println(genreServiceSpring.get());
         System.out.println();
 
 
@@ -63,19 +63,19 @@ public class MainSpring {
         singerServiceSpring.create(new SingerDTO("Imagine Dragons"));
         singerServiceSpring.create(new SingerDTO("Cris Rea"));
         logger.log(Level.INFO, "--////////---------------> getAll Singer");
-        System.out.println(singerServiceSpring.getAll());
+        System.out.println(singerServiceSpring.get());
         System.out.println();
         logger.log(Level.INFO, "--////////---------------> update Singer");
         singerServiceSpring.update(3,new SingerDTO("Madonna"));
-        System.out.println(singerServiceSpring.getAll());
+        System.out.println(singerServiceSpring.get());
         System.out.println();
         logger.log(Level.INFO, "--////////---------------> check Singer");
         System.out.println(singerServiceSpring.check(3));
-        System.out.println(singerServiceSpring.getAll(3));
+        System.out.println(singerServiceSpring.get(3));
         System.out.println();
         logger.log(Level.INFO, "--////////---------------> delete Singer");
         singerServiceSpring.delete(3);
-        System.out.println(singerServiceSpring.getAll());
+        System.out.println(singerServiceSpring.get());
         System.out.println();
 
         VoteService voteServiceSpring = context.getBean("VoteServiceSpring", VoteService.class);

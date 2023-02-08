@@ -31,7 +31,7 @@ public class StatisticsService implements IStatisticsService {
     @Override
     public Map<SingerDTO, Integer> getTopSinger(){
         Map<SingerDTO, Integer> mapSinger = new HashMap<>();
-        List<SingerDTO> singerDTOS = iSingerService.getAll();
+        List<SingerDTO> singerDTOS = iSingerService.get();
         for (SingerDTO singer : singerDTOS) {
             mapSinger.put(singer, 0);
         }
@@ -51,7 +51,7 @@ public class StatisticsService implements IStatisticsService {
     @Override
     public Map<GenreDTO, Integer> getTopGenre(){
         Map<GenreDTO, Integer> mapGenre = new HashMap<>();
-        List<GenreDTO> genreDTOS = iGenreService.getAll();
+        List<GenreDTO> genreDTOS = iGenreService.get();
 
         for (GenreDTO genreDTO : genreDTOS) {
             mapGenre.put(genreDTO, 0);

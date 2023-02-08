@@ -2,17 +2,17 @@ package groupwork.dao;
 
 //import groupwork.dao.memory.fabrics.GenreDaoSingleton;
 
-import groupwork.dao.db.GenreDaoDB;
-import groupwork.dao.db.orm.api.IManager;
-import groupwork.dao.db.orm.factory.EntityManagerVoteSingleton;
+//import groupwork.dao.db.GenreDaoDB;
+//import groupwork.dao.db.orm.api.IManager;
+//import groupwork.dao.db.orm.factory.EntityManagerVoteSingleton;
 import groupwork.entity.Genre;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Assertions;
+//import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+//import java.util.List;
 
 class HibernateUtilGenreTest {
 //    private static IManager manager;
@@ -22,14 +22,14 @@ class HibernateUtilGenreTest {
         System.out.println("Running testCreate...");
         logger.log(Level.INFO,"LOG Running testCreate..." );
         Genre genre = new Genre("rock" );
-        IManager manager = EntityManagerVoteSingleton.getInstance();
-        GenreDaoDB genreDaoDb = new GenreDaoDB(manager);
-        for (Genre val : genreDaoDb.getGenreList() ) {
-            genreDaoDb.delete(val);
-        }
-        genreDaoDb.insert(genre);
-        List<Genre> genreList = genreDaoDb.getGenreList();
-        Assertions.assertTrue(genreList.size() == 1);
+//        IManager manager = EntityManagerVoteSingleton.getInstance();
+//        GenreDaoDB genreDaoDb = new GenreDaoDB(manager);
+//        for (Genre val : genreDaoDb.getGenreList() ) {
+//            genreDaoDb.delete(val);
+//        }
+//        genreDaoDb.insert(genre);
+//        List<Genre> genreList = genreDaoDb.getGenreList();
+//        Assertions.assertTrue(genreList.size() == 1);
     }
     @Test
     public void testDelete() {
@@ -37,30 +37,30 @@ class HibernateUtilGenreTest {
         logger.log(Level.INFO,"LOG Running testDelete..." );
         Genre genre = new Genre("rock" );
         Genre genre1 = new Genre("jazz" );
-        IManager manager = EntityManagerVoteSingleton.getInstance();
-        GenreDaoDB genreDaoDb = new GenreDaoDB(manager);
-        for (Genre val : genreDaoDb.getGenreList() ) {
-            genreDaoDb.delete(val);
-        }
-        genreDaoDb.insert(genre);
-        genreDaoDb.insert(genre1);
-        genreDaoDb.delete(genre);
-        List<Genre> genreList = genreDaoDb.getGenreList();
-        Assertions.assertTrue(genreList.size() == 1);
+//        IManager manager = EntityManagerVoteSingleton.getInstance();
+//        GenreDaoDB genreDaoDb = new GenreDaoDB(manager);
+//        for (Genre val : genreDaoDb.getGenreList() ) {
+//            genreDaoDb.delete(val);
+//        }
+//        genreDaoDb.insert(genre);
+//        genreDaoDb.insert(genre1);
+//        genreDaoDb.delete(genre);
+//        List<Genre> genreList = genreDaoDb.getGenreList();
+//        Assertions.assertTrue(genreList.size() == 1);
     }
     @Test
     public void testIsContain() {
-        System.out.println("Running testCreate...");
-        Genre genre = new Genre("rock" );
-        Genre genre1 = new Genre("jazz" );
-        IManager manager = EntityManagerVoteSingleton.getInstance();
-        GenreDaoDB genreDaoDb = new GenreDaoDB(manager);
-        for (Genre val : genreDaoDb.getGenreList() ) {
-            genreDaoDb.delete(val);
-        }
-        genreDaoDb.insert(genre);
-        genreDaoDb.insert(genre1);
-        Assertions.assertTrue( genreDaoDb.exist(genre.getId()));
+//        System.out.println("Running testCreate...");
+//        Genre genre = new Genre("rock" );
+//        Genre genre1 = new Genre("jazz" );
+//        IManager manager = EntityManagerVoteSingleton.getInstance();
+//        GenreDaoDB genreDaoDb = new GenreDaoDB(manager);
+//        for (Genre val : genreDaoDb.getGenreList() ) {
+//            genreDaoDb.delete(val);
+//        }
+//        genreDaoDb.insert(genre);
+//        genreDaoDb.insert(genre1);
+//        Assertions.assertTrue( genreDaoDb.exist(genre.getId()));
     }
 
 

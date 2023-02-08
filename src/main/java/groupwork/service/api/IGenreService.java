@@ -8,13 +8,13 @@ public interface IGenreService {
 
     boolean check(long number);
 
-    List<GenreDTO> getAll();
+    List<GenreDTO> get();
 
     void delete(long id);
 
     void create(GenreDTO genreDTO);
 
     void update(long id, GenreDTO genreDTO);
-    GenreDTO getAll(long id);
+    GenreDTO get(long id);
 
 }
