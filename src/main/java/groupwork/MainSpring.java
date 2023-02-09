@@ -24,83 +24,83 @@ public class MainSpring {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("main-context.xml");
 
-        GenreService genreServiceSpring = context.getBean("GenreServiceSpring", GenreService.class);
-        GenreDaoDB genreDaoSpring = context.getBean("GenreDaoSpring", GenreDaoDB.class);
+        GenreService genreService = context.getBean("genreService", GenreService.class);
+        GenreDaoDB genreDao = context.getBean("genreDao", GenreDaoDB.class);
 //        Manager managerSpring = context.getBean("ManagerSpring", Manager.class);
         logger.log(Level.INFO, "-----------------> getBeen GENRE");
-        System.out.println(genreServiceSpring);
-        System.out.println(genreDaoSpring);
+        System.out.println(genreService);
+        System.out.println(genreDao);
         System.out.println();
 
-        genreServiceSpring.create(new GenreDTO("jazz1"));
-        genreServiceSpring.create(new GenreDTO("jazz2"));
-        genreServiceSpring.create(new GenreDTO("jazz3"));
-        genreServiceSpring.create(new GenreDTO("jazz4"));
+        genreService.create(new GenreDTO("jazz1"));
+        genreService.create(new GenreDTO("jazz2"));
+        genreService.create(new GenreDTO("jazz3"));
+        genreService.create(new GenreDTO("jazz4"));
         logger.log(Level.INFO, "-----------------> getAll GENRE");
-        System.out.println(genreServiceSpring.get());
+        System.out.println(genreService.get());
         System.out.println();
         logger.log(Level.INFO, "-----------------> update GENRE");
-        genreServiceSpring.update(2,new GenreDTO("pop"));
-        System.out.println(genreServiceSpring.get());
+        genreService.update(2,new GenreDTO("pop"));
+        System.out.println(genreService.get());
         System.out.println();
         logger.log(Level.INFO, "-----------------> check GENRE");
-        System.out.println(genreServiceSpring.check(2));
-        System.out.println(genreServiceSpring.get(2));
+        System.out.println(genreService.check(2));
+        System.out.println(genreService.get(2));
         System.out.println();
         logger.log(Level.INFO, "-----------------> delete GENRE");
-        genreServiceSpring.delete(4);
-        System.out.println(genreServiceSpring.get());
+        genreService.delete(4);
+        System.out.println(genreService.get());
         System.out.println();
 
 
-        SingerService singerServiceSpring = context.getBean("SingerServiceSpring", SingerService.class);
-        SingerDaoDB singerDaoSpring = context.getBean("SingerDaoSpring", SingerDaoDB.class);
+        SingerService singerService = context.getBean("singerService", SingerService.class);
+        SingerDaoDB singerDao = context.getBean("singerDao", SingerDaoDB.class);
         logger.log(Level.INFO, "--////////---------------> getBeen Singer");
-        System.out.println(singerServiceSpring);
-        System.out.println(singerDaoSpring);
+        System.out.println(singerService);
+        System.out.println(singerDao);
         System.out.println();
-        singerServiceSpring.create(new SingerDTO("Maroon"));
-        singerServiceSpring.create(new SingerDTO("Imagine Dragons"));
-        singerServiceSpring.create(new SingerDTO("Cris Rea"));
+        singerService.create(new SingerDTO("Maroon"));
+        singerService.create(new SingerDTO("Imagine Dragons"));
+        singerService.create(new SingerDTO("Cris Rea"));
         logger.log(Level.INFO, "--////////---------------> getAll Singer");
-        System.out.println(singerServiceSpring.get());
+        System.out.println(singerService.get());
         System.out.println();
         logger.log(Level.INFO, "--////////---------------> update Singer");
-        singerServiceSpring.update(3,new SingerDTO("Madonna"));
-        System.out.println(singerServiceSpring.get());
+        singerService.update(3,new SingerDTO("Madonna"));
+        System.out.println(singerService.get());
         System.out.println();
         logger.log(Level.INFO, "--////////---------------> check Singer");
-        System.out.println(singerServiceSpring.check(3));
-        System.out.println(singerServiceSpring.get(3));
+        System.out.println(singerService.check(3));
+        System.out.println(singerService.get(3));
         System.out.println();
         logger.log(Level.INFO, "--////////---------------> delete Singer");
-        singerServiceSpring.delete(3);
-        System.out.println(singerServiceSpring.get());
+        singerService.delete(3);
+        System.out.println(singerService.get());
         System.out.println();
 
-        VoteService voteServiceSpring = context.getBean("VoteServiceSpring", VoteService.class);
-        StatisticsService statisticsServiceSpring = context.getBean("StatisticsServiceSpring", StatisticsService.class);
+        VoteService voteService = context.getBean("voteService", VoteService.class);
+        StatisticsService statisticsService = context.getBean("statisticsService", StatisticsService.class);
         logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getBean VOTE & Statistics");
-        System.out.println(voteServiceSpring);
-        System.out.println(statisticsServiceSpring);
+        System.out.println(voteService);
+        System.out.println(statisticsService);
         System.out.println();
 
-        voteServiceSpring.save(new VoiceDTO(2,new long[]{1,2,3},"hello1"));
-        voteServiceSpring.save(new VoiceDTO(1,new long[]{1,2,3},"hello2"));
-        voteServiceSpring.save(new VoiceDTO(2,new long[]{1,2,3},"hello3"));
+        voteService.save(new VoiceDTO(2,new long[]{1,2,3},"hello1"));
+        voteService.save(new VoiceDTO(1,new long[]{1,2,3},"hello2"));
+        voteService.save(new VoiceDTO(2,new long[]{1,2,3},"hello3"));
         logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll VOTES");
-        System.out.println(voteServiceSpring.get());
+        System.out.println(voteService.get());
         System.out.println();
 
-        Map<GenreDTO, Integer> topGenre = statisticsServiceSpring.getTopGenre();
+        Map<GenreDTO, Integer> topGenre = statisticsService.getTopGenre();
         logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll topGenre");
         topGenre.forEach((k,v) -> System.out.println(k.getName() + " " + v));
 
-        Map<SingerDTO, Integer> topSinger = statisticsServiceSpring.getTopSinger();
+        Map<SingerDTO, Integer> topSinger = statisticsService.getTopSinger();
         logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll topSinger");
         topSinger.forEach((k,v) -> System.out.println(k.getName() + " "+ v));
 
-        Map<LocalDateTime, String> aboutUser = statisticsServiceSpring.getAboutUser();
+        Map<LocalDateTime, String> aboutUser = statisticsService.getAboutUser();
         logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll getAboutUser");
         aboutUser.forEach((k,v) ->  System.out.println(k + " " + v));
 //    <bean id="GenreDaoSpring" class="groupwork.dao.db.GenreDaoDB">

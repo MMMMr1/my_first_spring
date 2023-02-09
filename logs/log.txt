@@ -326,3 +326,398 @@
 14:36:20 [main] INFO  groupwork.dao.db.SingerDaoDB - info
 14:36:20 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
 14:36:20 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+22:05:51 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+22:05:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+22:05:51 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22:05:51 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+22:05:51 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+22:05:51 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+22:05:51 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+22:05:51 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+22:05:52 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+22:05:52 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6282b9f5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+22:05:52 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d293993] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+22:05:52 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:05:58 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+22:05:58 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+22:05:58 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+22:05:58 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+22:05:58 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+22:05:58 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+22:05:58 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+22:05:58 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:05:58 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+22:05:58 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:05:58 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+22:05:58 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+22:05:58 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:05:58 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+22:05:58 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+22:05:58 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+22:05:58 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:05:58 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+22:05:58 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+22:06:30 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+22:06:30 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+22:06:31 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22:06:31 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+22:06:31 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+22:06:31 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+22:06:31 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+22:06:31 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+22:06:31 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+22:06:32 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@42297bdf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+22:06:32 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@195113de] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+22:06:32 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:06:47 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+22:07:06 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+22:07:06 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+22:07:13 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+22:07:13 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+22:07:13 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+22:07:13 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+22:07:13 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:07:13 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+22:07:13 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:07:13 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+22:07:13 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+22:07:13 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:07:13 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+22:07:13 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+22:07:13 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+22:07:13 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+22:07:13 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+22:07:13 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+22:15:19 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+22:15:19 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+22:15:19 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22:15:20 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+22:15:20 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+22:15:20 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+22:15:20 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+22:15:20 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+22:15:20 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+22:15:21 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6a55594b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+22:15:21 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11b5f4e2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+22:15:21 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+23:49:37 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+23:49:37 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+23:49:41 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+23:49:41 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+23:49:41 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+23:49:41 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+23:49:41 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+23:49:41 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+23:49:41 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+23:49:41 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+23:49:41 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+23:49:42 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b41587d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:49:42 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@54c425b1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:49:42 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+23:49:42 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+23:49:42 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+23:49:42 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+23:49:43 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+23:49:43 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+23:49:43 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+23:49:43 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+23:49:43 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+23:49:43 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+23:49:43 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+23:49:43 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+23:49:43 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+23:49:43 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+23:49:43 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+23:49:43 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+23:49:43 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+23:49:43 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+23:49:43 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+23:49:43 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+00:28:24 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+00:28:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+00:28:24 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+00:28:24 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+00:28:24 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+00:28:24 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+00:28:24 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+00:28:24 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+00:28:25 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+00:28:25 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2dd1086] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:28:25 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@265a094b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:28:25 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:28:25 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+00:28:25 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+00:28:26 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+00:28:26 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+00:28:26 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+00:28:26 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+00:28:26 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+00:28:26 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:28:26 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+00:28:26 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:28:26 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+00:28:26 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+00:28:26 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:28:26 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+00:28:26 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+00:28:26 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+00:28:26 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:28:26 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+00:28:26 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+00:28:36 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+00:28:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+00:28:36 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+00:28:37 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+00:28:37 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+00:28:37 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+00:28:37 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+00:28:37 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+00:28:37 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+00:28:38 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@632b305d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:28:38 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6bcae9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:28:38 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:28:38 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+00:35:18 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+00:35:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+00:35:18 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+00:35:18 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+00:35:18 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+00:35:18 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+00:35:18 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+00:35:18 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+00:35:18 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+00:35:19 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@9cfc77] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:35:19 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6ee88e21] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:35:19 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:35:19 [main] WARN  org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'singerService' defined in class path resource [main-context.xml]: Cannot resolve reference to bean 'singerDao' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'singerDao' available
+00:36:01 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+00:36:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+00:36:01 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+00:36:01 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+00:36:01 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+00:36:01 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+00:36:01 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+00:36:01 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+00:36:02 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+00:36:02 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@217235f5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:36:02 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@22a260ff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:36:02 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:36:02 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+00:36:02 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+00:36:02 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+00:36:03 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+00:36:03 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+00:36:03 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+00:36:03 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+00:36:03 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:36:03 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+00:36:03 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:36:03 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+00:36:03 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+00:36:03 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:36:03 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+00:36:03 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+00:36:03 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+00:36:03 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+00:36:03 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+00:36:03 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+00:47:56 [main] WARN  org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genreService' defined in class path resource [main-context.xml]: Cannot resolve reference to bean 'genreDao' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genreDao' defined in class path resource [main-context.xml]: Cannot resolve reference to bean 'manager' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'manager' defined in class path resource [main-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'createEntityManagerFactory' of bean class [javax.persistence.Persistence]: Bean property 'createEntityManagerFactory' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+13:02:37 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:02:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:02:38 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:02:38 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:02:38 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:02:38 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:02:38 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:02:38 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:02:38 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:02:39 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@217235f5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:02:39 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@22a260ff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:02:39 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:02:39 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+13:02:39 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+13:02:39 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+13:02:39 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+13:02:39 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+13:02:39 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+13:02:39 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+13:02:39 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:02:39 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+13:02:39 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:02:39 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+13:02:39 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+13:02:39 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:02:39 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+13:02:39 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+13:02:39 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+13:02:39 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:02:39 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+13:02:39 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+13:15:03 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:15:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:15:03 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:15:03 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:15:03 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:15:03 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:15:03 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:15:03 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:15:04 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:15:04 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b41587d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:15:04 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@54c425b1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:15:04 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:15:04 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+13:15:04 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+13:15:05 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+13:15:05 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+13:15:05 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+13:15:05 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+13:15:05 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+13:15:05 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:05 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+13:15:05 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:05 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+13:15:05 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+13:15:05 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:05 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+13:15:05 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+13:15:05 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+13:15:05 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:05 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+13:15:05 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+13:15:52 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:15:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:15:52 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:15:52 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:15:52 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:15:52 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:15:52 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:15:52 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:15:53 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:15:53 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7418d76e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:15:53 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78d23d6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:15:53 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:15:53 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+13:15:53 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+13:15:54 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+13:15:54 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+13:15:54 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+13:15:54 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+13:15:54 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+13:15:54 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:54 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+13:15:54 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:54 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+13:15:54 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+13:15:54 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:54 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+13:15:54 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+13:15:54 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+13:15:54 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:15:54 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+13:15:54 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+13:17:33 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:17:33 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:17:34 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:17:34 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:17:34 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:17:34 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:17:34 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:17:34 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:17:34 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:17:35 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b41587d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:17:35 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@54c425b1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:17:35 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:17:35 [main] WARN  org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'voteService' defined in class path resource [main-context.xml]: Unsatisfied dependency expressed through constructor parameter 0: Ambiguous argument values for parameter of type [groupwork.dao.api.IVoteDao] - did you specify the correct bean references as arguments?
+13:19:04 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:19:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:19:04 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:19:05 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:19:05 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:19:05 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:19:05 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:19:05 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:19:05 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:19:06 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b41587d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:19:06 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@54c425b1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:19:06 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:19:06 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+13:19:06 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+13:19:06 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+13:19:06 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+13:19:06 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+13:19:06 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+13:19:06 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+13:19:06 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:19:06 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+13:19:06 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:19:06 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+13:19:06 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+13:19:06 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:19:06 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+13:19:06 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+13:19:06 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+13:19:06 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:19:06 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+13:19:06 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+13:20:05 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:20:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:20:06 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:20:06 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:20:06 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:20:06 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:20:06 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:20:06 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:20:06 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:20:07 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@44e4cb76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:20:07 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6b8d54da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:20:07 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:20:07 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+13:20:07 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+13:20:07 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+13:20:07 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+13:20:07 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+13:20:07 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+13:20:07 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+13:20:07 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:07 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+13:20:07 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:07 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+13:20:07 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+13:20:07 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:07 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+13:20:07 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+13:20:07 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+13:20:07 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:07 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+13:20:07 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser
+13:20:26 [main] INFO  hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: groupwork]
+13:20:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+13:20:26 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:20:27 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:20:27 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/group_voting]
+13:20:27 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+13:20:27 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+13:20:27 [main] INFO  engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:20:27 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+13:20:28 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@22ead351] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:20:28 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@773c2214] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:20:28 [main] INFO  transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:20:28 [main] INFO  groupwork.MainSpring - -----------------> getBeen GENRE
+13:20:28 [main] INFO  groupwork.MainSpring - -----------------> getAll GENRE
+13:20:28 [main] INFO  groupwork.MainSpring - -----------------> update GENRE
+13:20:28 [main] INFO  groupwork.MainSpring - -----------------> check GENRE
+13:20:28 [main] INFO  groupwork.MainSpring - -----------------> delete GENRE
+13:20:28 [main] INFO  groupwork.MainSpring - --////////---------------> getBeen Singer
+13:20:28 [main] INFO  groupwork.MainSpring - --////////---------------> getAll Singer
+13:20:28 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:28 [main] INFO  groupwork.MainSpring - --////////---------------> update Singer
+13:20:28 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:28 [main] INFO  groupwork.MainSpring - --////////---------------> check Singer
+13:20:28 [main] INFO  groupwork.MainSpring - --////////---------------> delete Singer
+13:20:28 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:28 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getBean VOTE & Statistics
+13:20:28 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll VOTES
+13:20:28 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topGenre
+13:20:28 [main] INFO  groupwork.dao.db.SingerDaoDB - info
+13:20:28 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll topSinger
+13:20:28 [main] INFO  groupwork.MainSpring - --////////----------!!!!!!!!!---------------> getAll getAboutUser

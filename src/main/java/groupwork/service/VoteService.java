@@ -16,14 +16,14 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class VoteService implements IVoteService {
-    private final IVoteDao votingDao;
+    private final IVoteDao voiceDao;
 
     private final ISingerService singerService;
 
     private final IGenreService genreService;
 
     public VoteService(IVoteDao voiceDao, ISingerService singerService, IGenreService genreService) {
-        this.votingDao = voiceDao;
+        this.voiceDao = voiceDao;
         this.singerService = singerService;
         this.genreService = genreService;
     }
@@ -49,14 +49,14 @@ public class VoteService implements IVoteService {
         }
 
         SavedVoice savedVoice = new SavedVoice(singer, genres, message, creationTime );
-        votingDao.save(savedVoice);
+        voiceDao.save(savedVoice);
     }
 
 
     @Override
     public List<SavedVoiceDTO> get() {
         List<SavedVoiceDTO> savedVoiceDTOS = new ArrayList<>();
-        List<SavedVoice> all = votingDao.get();
+        List<SavedVoice> all = voiceDao.get();
         for (SavedVoice voice : all) {
             LocalDateTime creationTime = voice.getCreationTime();
             String message = voice.getMessage();

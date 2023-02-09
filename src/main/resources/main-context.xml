@@ -5,36 +5,37 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--    <bean id="helloServiceA2" class="service.ServiceA" primary="true"/> УКАЗЫВАЕМ ПУТЬ К КЛАССУ class="service.ServiceA"-->
     <!--  <bean id="helloServiceA" class="service.ServiceA" />   УКАЗЫВАЕМ ПУТЬ К КЛАССУ class="service.ServiceA"-->
-    <bean id="GenreServiceSpring" class="groupwork.service.GenreService">
-        <constructor-arg index="0" ref="GenreDaoSpring"/>
+    <bean id="genreService" class="groupwork.service.GenreService">
+        <constructor-arg name="dao" ref="genreDao"/>
     </bean>
-    <bean id="GenreDaoSpring" class="groupwork.dao.db.GenreDaoDB">
-        <constructor-arg index="0" ref="ManagerSpring"/>
-    </bean>
-
-    <bean id="SingerServiceSpring" class="groupwork.service.SingerService">
-        <constructor-arg index="0" ref="SingerDaoSpring"/>
-    </bean>
-    <bean id="SingerDaoSpring" class="groupwork.dao.db.SingerDaoDB">
-        <constructor-arg index="0" ref="ManagerSpring"/>
+    <bean id="genreDao" class="groupwork.dao.db.GenreDaoDB">
+        <constructor-arg name="manager" ref="manager"/>
     </bean>
 
-    <bean id="VoteServiceSpring" class="groupwork.service.VoteService">
-        <constructor-arg index="0" ref="VoteDaoSpring"/>
-        <constructor-arg index="1" ref="SingerServiceSpring"/>
-        <constructor-arg index="2" ref="GenreServiceSpring"/>
+    <bean id="singerService" class="groupwork.service.SingerService">
+        <constructor-arg name="dao" ref="singerDao"/>
     </bean>
-    <bean id="VoteDaoSpring" class="groupwork.dao.db.VoteDaoDB">
-        <constructor-arg index="0" ref="ManagerSpring"/>
+    <bean id="singerDao" class="groupwork.dao.db.SingerDaoDB">
+        <constructor-arg name="manager" ref="manager"/>
     </bean>
-    <bean id="StatisticsServiceSpring" class="groupwork.service.StatisticsService">
-        <constructor-arg index="0" ref="VoteServiceSpring"/>
-        <constructor-arg index="1" ref="SingerServiceSpring"/>
-        <constructor-arg index="2" ref="GenreServiceSpring"/>
+    <bean id="voteService" class="groupwork.service.VoteService">
+        <constructor-arg name="voiceDao" ref="voteDao"/>
+        <constructor-arg name="singerService" ref="singerService"/>
+        <constructor-arg name="genreService" ref="genreService"/>
+    </bean>
+    <bean id="voteDao" class="groupwork.dao.db.VoteDaoDB">
+        <constructor-arg name="manager" ref="manager"/>
+    </bean>
+    <bean id="statisticsService" class="groupwork.service.StatisticsService">
+        <constructor-arg name="iVotesService" ref="voteService"/>
+        <constructor-arg name="iSingerService" ref="singerService"/>
+        <constructor-arg name="iGenreService" ref="genreService"/>
     </bean>
 
-    <bean id="ManagerSpring" class="groupwork.dao.db.orm.manager.Manager"/>
-
-
-
+    <bean id="manager" class="groupwork.dao.db.orm.manager.Manager"/>
 </beans>
+
+    <!--    <bean id="manager" class="javax.persistence.EntityManagerFactory">
+            <property name="createEntityManagerFactory" value="groupwork"/>
+        </bean>
+         -->
