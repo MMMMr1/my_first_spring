@@ -52,7 +52,7 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public void create(GenreDTO genreDTO) {
+    public void insert(GenreDTO genreDTO) {
         String name = genreDTO.getName();
         if (name != null && !name.isBlank()) {
             dao.insert(new Genre(name));

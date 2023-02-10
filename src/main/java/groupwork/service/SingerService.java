@@ -49,7 +49,7 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public void create(SingerDTO singerDTO) {
+    public void insert(SingerDTO singerDTO) {
         String name = singerDTO.getName();
         if (name != null && !name.isBlank()) {
             dao.insert(new Singer(name));

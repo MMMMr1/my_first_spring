@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--    <bean id="helloServiceA2" class="service.ServiceA" primary="true"/> УКАЗЫВАЕМ ПУТЬ К КЛАССУ class="service.ServiceA"-->
-    <!--  <bean id="helloServiceA" class="service.ServiceA" />   УКАЗЫВАЕМ ПУТЬ К КЛАССУ class="service.ServiceA"-->
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="groupwork.web.controllers"/>
+<mvc:annotation-driven/>
     <bean id="genreService" class="groupwork.service.GenreService">
         <constructor-arg name="dao" ref="genreDao"/>
     </bean>
@@ -32,8 +41,6 @@
         <constructor-arg name="iGenreService" ref="genreService"/>
     </bean>
     <bean id="manager" class="groupwork.dao.db.orm.manager.Manager"
-        destroy-method = "close">
+          destroy-method = "close">
     </bean>
 </beans>
-
-
