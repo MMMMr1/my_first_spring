@@ -30,14 +30,13 @@ public class GenreController {
 //                         @PathVariable("version") Long version,
                          @RequestBody GenreDTO genreDTO) {
 // оптимистические блокировки
+//       поменять genreDto на объект только с именем
       genreService.update(id,genreDTO);
-
     }
 
     @RequestMapping(method = RequestMethod.POST)
     protected void doPost(@RequestBody GenreDTO genreDTO) {
         genreService.insert(genreDTO);
-
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
