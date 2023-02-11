@@ -1,13 +1,33 @@
 package groupwork.web.controllers;
 
+import groupwork.core.dto.AboutRow;
+import groupwork.core.dto.GenreModelDTO;
+import groupwork.core.dto.StatisticModelDTO;
+import groupwork.service.api.IStatisticsService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 //@WebServlet(name = "ResultVotingServlet", urlPatterns = "/result")
-public class ResultVotingServlet   {
-//    private final IStatisticsService statisticsService;
-//
-//    public ResultVotingServlet() {
-//        this.statisticsService = StatisticServiceSingleton.getInstance();
+@RestController
+@RequestMapping("/result")
+public class StatisticController {
+    private final IStatisticsService statisticsService;
+
+    public StatisticController(IStatisticsService statisticsService) {
+        this.statisticsService = statisticsService;
+    }
+    @RequestMapping(method = RequestMethod.GET)
+    public   StatisticModelDTO getStatistic(){
+        return statisticsService.getResult();
+    }
+//    @RequestMapping(method = RequestMethod.GET)
+//    public   List<AboutRow> getStatistic(){
+//        return statisticsService.getAboutUser();
 //    }
-//
+    //
 //    @Override
 //    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        req.setCharacterEncoding("UTF-8");

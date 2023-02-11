@@ -29,4 +29,13 @@ public class StatisticModelDTO {
     public List<AboutRow> getListUsers() {
         return listUsers;
     }
+
+    @Override
+    public String toString() {
+        return "StatisticModelDTO{" +
+                "mapSingers=" + mapSingers +
+                ", mapGenres=" + mapGenres +
+                ", listUsers=" + listUsers +
+                '}';
+    }
 }

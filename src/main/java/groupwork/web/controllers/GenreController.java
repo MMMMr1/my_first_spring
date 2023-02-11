@@ -19,13 +19,11 @@ public class GenreController {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<GenreModelDTO> getList(){
-        //    worked
         return genreService.get();
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public GenreModelDTO card(@PathVariable("id") Long id){
-//        todo
         return genreService.get(id);
     }
 

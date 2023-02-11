@@ -71,13 +71,13 @@ public class StatisticsService implements IStatisticsService {
 
     @Override
     public List<AboutRow> getAboutUser(){
-        List<VoiceModelDTO> savedVoiceDTOS = votesService.get();
-        List<AboutRow> userList = new ArrayList<>();
-        for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
-            userList.add(new AboutRow( savedVoiceDTO.getCreationTime(),savedVoiceDTO.getMessage()));
-        }
+//        List<VoiceModelDTO> savedVoiceDTOS = votesService.get();
+//        List<AboutRow> userList = new ArrayList<>();
+//        for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
+//            userList.add(new AboutRow( savedVoiceDTO.getCreationTime(),savedVoiceDTO.getMessage()));
+//        }
         return votesService.get().stream()
-                .map(s -> new AboutRow(s.getCreationTime(),s.getMessage()))
+                .map(s -> new AboutRow(s.getMessage(), s.getCreationTime()))
                 .sorted(Comparator.comparing(AboutRow::getCreationTime).reversed())
                 .collect(Collectors.toList());
     }
