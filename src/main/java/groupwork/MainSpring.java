@@ -1,8 +1,6 @@
 package groupwork;
 
-import groupwork.core.dto.GenreDTO;
-import groupwork.core.dto.SingerDTO;
-import groupwork.core.dto.VoiceDTO;
+import groupwork.core.dto.*;
 import groupwork.dao.db.GenreDaoDB;
 import groupwork.dao.db.SingerDaoDB;
 import groupwork.dao.db.orm.manager.Manager;
@@ -95,11 +93,11 @@ public class MainSpring {
               System.out.println(voteService.get());
               System.out.println();
 
-              Map<GenreDTO, Integer> topGenre = statisticsService.getTopGenre();
+              Map<GenreModelDTO, Integer> topGenre = statisticsService.getTopGenre();
               logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll topGenre");
               topGenre.forEach((k, v) -> System.out.println(k.getName() + " " + v));
 
-              Map<SingerDTO, Integer> topSinger = statisticsService.getTopSinger();
+              Map<SingerModelDTO, Integer> topSinger = statisticsService.getTopSinger();
               logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll topSinger");
               topSinger.forEach((k, v) -> System.out.println(k.getName() + " " + v));
 

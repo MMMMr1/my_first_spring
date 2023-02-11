@@ -1,6 +1,7 @@
 package groupwork.service.api;
 
 import groupwork.core.dto.SingerDTO;
+import groupwork.core.dto.SingerModelDTO;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ public interface ISingerService {
 
     boolean check(long number);
 
-    List<SingerDTO> get();
+    List<SingerModelDTO> get();
 
 //    void delete(SingerDTO singerDTO);
     void delete(long id);
@@ -16,5 +17,5 @@ public interface ISingerService {
     void insert(SingerDTO singerDTO);
 
     void update(long id, SingerDTO singerDTO);
-    SingerDTO get(long id);
+    SingerModelDTO get(long id);
 }

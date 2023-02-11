@@ -1,5 +1,6 @@
 package groupwork.service;
 
+import groupwork.core.dto.GenreModelDTO;
 import groupwork.dao.api.IGenreDao;
 import groupwork.core.dto.GenreDTO;
 import groupwork.entity.Genre;
@@ -26,13 +27,13 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public List<GenreDTO> get() {
+    public List<GenreModelDTO> get() {
         List<Genre> genreList = dao.get();
 
-        List<GenreDTO> list = new ArrayList<>();
+        List<GenreModelDTO> list = new ArrayList<>();
 
         for (Genre genreEntity : genreList) {
-            list.add(new GenreDTO(genreEntity.getName(), genreEntity.getId()));
+            list.add(new GenreModelDTO(genreEntity.getName(), genreEntity.getId()));
         }
 
         return list;
@@ -82,8 +83,8 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public GenreDTO get(long id) {
+    public GenreModelDTO get(long id) {
         Genre genreEntity = this.dao.get(id);
-        return new GenreDTO(genreEntity.getName(), genreEntity.getId());
+        return new GenreModelDTO(genreEntity.getName(), genreEntity.getId());
     }
 }

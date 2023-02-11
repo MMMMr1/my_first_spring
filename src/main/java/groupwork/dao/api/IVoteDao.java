@@ -1,10 +1,10 @@
 package groupwork.dao.api;
 
-import groupwork.entity.SavedVoice;
+import groupwork.entity.Voice;
 
 import java.util.List;
 
 public interface IVoteDao {
-    List<SavedVoice> get();
-    long save(SavedVoice voice);
+    List<Voice> get();
+    long save(Voice voice);
 }

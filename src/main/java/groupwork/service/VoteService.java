@@ -1,12 +1,9 @@
 package groupwork.service;
 
+import groupwork.core.dto.*;
 import groupwork.dao.api.IVoteDao;
-import groupwork.core.dto.GenreDTO;
-import groupwork.core.dto.SavedVoiceDTO;
-import groupwork.core.dto.SingerDTO;
-import groupwork.core.dto.VoiceDTO;
 import groupwork.entity.Genre;
-import groupwork.entity.SavedVoice;
+import groupwork.entity.Voice;
 import groupwork.entity.Singer;
 import groupwork.service.api.IGenreService;
 import groupwork.service.api.ISingerService;
@@ -32,32 +29,32 @@ public class VoteService implements IVoteService {
     public void save(VoiceDTO voice) {
         check(voice);
 
-        SavedVoiceDTO savedVoiceDTO = new SavedVoiceDTO(voice);
+        VoiceModelDTO savedVoiceDTO = new VoiceModelDTO(voice);
 
 //        String email = savedVoiceDTO.getMail();
         LocalDateTime creationTime = savedVoiceDTO.getCreationTime();
         String message = savedVoiceDTO.getMessage();
 
-        long  singer_id = savedVoiceDTO.getSinger();
-        SingerDTO s = singerService.get(singer_id);
-        Singer singer = new Singer(s.getId(), s.getName());
+        long  singerId = savedVoiceDTO.getSinger();
+        SingerModelDTO singerModelDTO = singerService.get(singerId);
+        Singer singer = new Singer(singerModelDTO.getId(), singerModelDTO.getName());
 
         List<Genre> genres = new ArrayList<>();
-        for (long genre_id : savedVoiceDTO.getGenre()) {
-            GenreDTO genreDTO = genreService.get(genre_id);
-            genres.add(new Genre(genreDTO.getId(), genreDTO.getName()));
+        for (long genreId : savedVoiceDTO.getGenre()) {
+            GenreModelDTO genreModelDTO = genreService.get(genreId);
+            genres.add(new Genre(genreModelDTO.getId(), genreModelDTO.getName()));
         }
 
-        SavedVoice savedVoice = new SavedVoice(singer, genres, message, creationTime );
+        Voice savedVoice = new Voice(singer, genres, message, creationTime );
         voiceDao.save(savedVoice);
     }
 
 
     @Override
-    public List<SavedVoiceDTO> get() {
-        List<SavedVoiceDTO> savedVoiceDTOS = new ArrayList<>();
-        List<SavedVoice> all = voiceDao.get();
-        for (SavedVoice voice : all) {
+    public List<VoiceModelDTO> get() {
+        List<VoiceModelDTO> savedVoiceDTOS = new ArrayList<>();
+        List<Voice> all = voiceDao.get();
+        for (Voice voice : all) {
             LocalDateTime creationTime = voice.getCreationTime();
             String message = voice.getMessage();
             Long id_singer = voice.getSinger().getId();
@@ -69,7 +66,7 @@ public class VoteService implements IVoteService {
             }
 
             VoiceDTO voiceDTO = new VoiceDTO(id_singer, genres, message);
-            savedVoiceDTOS.add(new SavedVoiceDTO(voiceDTO, creationTime));
+            savedVoiceDTOS.add(new VoiceModelDTO(voiceDTO, creationTime));
         }
         return savedVoiceDTOS;
     }

@@ -1,28 +1,22 @@
 package groupwork.core.dto;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
-public class SavedVoiceDTO implements Comparable<SavedVoiceDTO>{
+
+public class VoiceModelDTO implements Comparable<VoiceModelDTO>{
     private VoiceDTO voice;
     private LocalDateTime creationTime;
 
-//    private long key;
 //
 //    private boolean authorization;
 
-    public SavedVoiceDTO(VoiceDTO voice) {
+    public VoiceModelDTO(VoiceDTO voice) {
         this.voice = voice;
         this.creationTime = LocalDateTime.now();
-//        this.key = (long) (Math.random()*10000);
-//        this.authorization = false;
     }
 
-    public SavedVoiceDTO(VoiceDTO voice, LocalDateTime creationTime) {
+    public VoiceModelDTO(VoiceDTO voice, LocalDateTime creationTime) {
         this.voice = voice;
         this.creationTime = creationTime;
-//        this.key = (long) (Math.random()*10000);
-//        this.authorization = false;
-
     }
 
 
@@ -34,9 +28,6 @@ public class SavedVoiceDTO implements Comparable<SavedVoiceDTO>{
     public void setVoice(VoiceDTO voice) {
         this.voice = voice;
     }
-//    public String getMail() {
-//        return voice.getMail();
-//    }
 
     public long getSinger() {
         return voice.getSinger();
@@ -59,7 +50,7 @@ public class SavedVoiceDTO implements Comparable<SavedVoiceDTO>{
     }
 
     @Override
-    public int compareTo(SavedVoiceDTO o) {
+    public int compareTo(VoiceModelDTO o) {
         return o.getCreationTime().compareTo(this.creationTime);
     }
 
@@ -68,7 +59,7 @@ public class SavedVoiceDTO implements Comparable<SavedVoiceDTO>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        SavedVoiceDTO that = (SavedVoiceDTO) o;
+        VoiceModelDTO that = (VoiceModelDTO) o;
 
         if (voice != null ? !voice.equals(that.voice) : that.voice != null) return false;
         return creationTime != null ? creationTime.equals(that.creationTime) : that.creationTime == null;

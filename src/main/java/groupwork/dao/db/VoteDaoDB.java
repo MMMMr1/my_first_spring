@@ -2,7 +2,7 @@ package groupwork.dao.db;
 
 import groupwork.dao.api.IVoteDao;
 import groupwork.dao.db.orm.api.IManager;
-import groupwork.entity.SavedVoice;
+import groupwork.entity.Voice;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -14,13 +14,13 @@ public class VoteDaoDB implements IVoteDao {
     }
 
     @Override
-    public List<SavedVoice> get() {
+    public List<Voice> get() {
         EntityManager entityManager = null;
-        List<SavedVoice> savedVoices;
+        List<Voice> savedVoices;
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
-            savedVoices  = entityManager.createQuery("FROM SavedVoice", SavedVoice.class).getResultList();
+            savedVoices  = entityManager.createQuery("FROM Voice", Voice.class).getResultList();
             entityManager.getTransaction().commit();
             return savedVoices;
         } catch (Exception e) {
@@ -33,7 +33,7 @@ public class VoteDaoDB implements IVoteDao {
     }
 
     @Override
-    public long save(SavedVoice voice) {
+    public long save(Voice voice) {
 
         EntityManager entityManager = null;
         try {

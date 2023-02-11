@@ -1,6 +1,6 @@
 package groupwork.service.api;
 
-import groupwork.core.dto.SavedVoiceDTO;
+import groupwork.core.dto.VoiceModelDTO;
 import groupwork.core.dto.VoiceDTO;
 
 import java.util.List;
@@ -8,5 +8,5 @@ import java.util.List;
 public interface IVoteService {
 
     void save(VoiceDTO voice);
-    List<SavedVoiceDTO> get();
+    List<VoiceModelDTO> get();
 }

@@ -1,5 +1,7 @@
 package groupwork.service;
 
+import groupwork.core.dto.GenreModelDTO;
+import groupwork.core.dto.SingerModelDTO;
 import groupwork.dao.api.ISingerDao;
 import groupwork.core.dto.SingerDTO;
 import groupwork.entity.Singer;
@@ -26,13 +28,13 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public List<SingerDTO> get() {
+    public List<SingerModelDTO> get() {
         List<Singer> singerList = dao.get();
 
-        List<SingerDTO>list = new ArrayList<>();
+        List<SingerModelDTO>list = new ArrayList<>();
 
         for (Singer singerEntity : singerList) {
-            list.add(new SingerDTO(singerEntity.getName(), singerEntity.getId()));
+            list.add(new SingerModelDTO(singerEntity.getName(), singerEntity.getId()));
         }
 
         return list;
@@ -73,9 +75,9 @@ public class SingerService implements ISingerService {
     }
 
     @Override
-    public SingerDTO get(long id) {
+    public SingerModelDTO get(long id) {
         Singer singerEntity = this.dao.get(id);
-        return new SingerDTO(singerEntity.getName(), singerEntity.getId());
+        return new SingerModelDTO(singerEntity.getName(), singerEntity.getId());
 
     }
 }

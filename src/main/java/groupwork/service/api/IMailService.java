@@ -1,8 +1,8 @@
 package groupwork.service.api;
 
-import groupwork.entity.SavedVoice;
+import groupwork.entity.Voice;
 
 
 public interface IMailService {
-    void send(SavedVoice savedVoiceEntity, long id);
+    void send(Voice savedVoiceEntity, long id);
 }

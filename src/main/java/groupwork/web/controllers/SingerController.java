@@ -2,6 +2,7 @@ package groupwork.web.controllers;
 
 
 import groupwork.core.dto.SingerDTO;
+import groupwork.core.dto.SingerModelDTO;
 import groupwork.service.api.ISingerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,12 +22,12 @@ public class SingerController {
     }
 
     @RequestMapping(method = RequestMethod.GET)//    @AliasFor
-    public List<SingerDTO> getList(){
+    public List<SingerModelDTO> getList(){
         return singerService.get();
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public SingerDTO card(@PathVariable("id") Long id){
+    public SingerModelDTO card(@PathVariable("id") Long id){
         return null;
     }
 //    @RequestMapping(path = "/{id}/version/{version}", method = RequestMethod.PUT)

@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "app.votes")
-public class SavedVoice {
+public class Voice {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
@@ -43,10 +43,10 @@ public class SavedVoice {
     private LocalDateTime creationTime;
 
 
-    public SavedVoice() {
+    public Voice() {
     }
 
-    public SavedVoice(Singer singer, List<Genre> genres, String message, LocalDateTime creationTime) {
+    public Voice(Singer singer, List<Genre> genres, String message, LocalDateTime creationTime) {
         this.singer = singer;
         this.genres = genres;
         this.message = message;

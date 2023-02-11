@@ -1,9 +1,6 @@
 package groupwork.service;
 
-import groupwork.core.dto.StatisticDTO;
-import groupwork.core.dto.GenreDTO;
-import groupwork.core.dto.SavedVoiceDTO;
-import groupwork.core.dto.SingerDTO;
+import groupwork.core.dto.*;
 import groupwork.service.api.IGenreService;
 import groupwork.service.api.ISingerService;
 import groupwork.service.api.IStatisticsService;
@@ -29,16 +26,16 @@ public class StatisticsService implements IStatisticsService {
         this.iGenreService = iGenreService;
     }
     @Override
-    public Map<SingerDTO, Integer> getTopSinger(){
-        Map<SingerDTO, Integer> mapSinger = new HashMap<>();
-        List<SingerDTO> singerDTOS = iSingerService.get();
-        for (SingerDTO singer : singerDTOS) {
+    public Map<SingerModelDTO, Integer> getTopSinger(){
+        Map<SingerModelDTO, Integer> mapSinger = new HashMap<>();
+        List<SingerModelDTO> singerDTOS = iSingerService.get();
+        for (SingerModelDTO singer : singerDTOS) {
             mapSinger.put(singer, 0);
         }
-        List<SavedVoiceDTO> savedVoiceDTOS = iVotesService.get();
-        for (SavedVoiceDTO savedVoiceDTO : savedVoiceDTOS) {
+        List<VoiceModelDTO> savedVoiceDTOS = iVotesService.get();
+        for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
             long idSinger = savedVoiceDTO.getSinger();
-            for (SingerDTO SingerDTO : singerDTOS) {
+            for (SingerModelDTO SingerDTO : singerDTOS) {
                 if (idSinger == SingerDTO.getId()) {
                     mapSinger.put(SingerDTO, mapSinger.get(SingerDTO) + 1);
                 }
@@ -49,17 +46,17 @@ public class StatisticsService implements IStatisticsService {
                         , (v1, v2) -> v1, LinkedHashMap::new));
     }
     @Override
-    public Map<GenreDTO, Integer> getTopGenre(){
-        Map<GenreDTO, Integer> mapGenre = new HashMap<>();
-        List<GenreDTO> genreDTOS = iGenreService.get();
+    public Map<GenreModelDTO, Integer> getTopGenre(){
+        Map<GenreModelDTO, Integer> mapGenre = new HashMap<>();
+        List<GenreModelDTO> genreDTOS = iGenreService.get();
 
-        for (GenreDTO genreDTO : genreDTOS) {
+        for (GenreModelDTO genreDTO : genreDTOS) {
             mapGenre.put(genreDTO, 0);
         }
-        List<SavedVoiceDTO> savedVoiceDTOS = iVotesService.get();
-        for (SavedVoiceDTO savedVoiceDTO : savedVoiceDTOS) {
+        List<VoiceModelDTO> savedVoiceDTOS = iVotesService.get();
+        for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
             long[] idGenre = savedVoiceDTO.getGenre();
-            for (GenreDTO genreDTO : genreDTOS) {
+            for (GenreModelDTO genreDTO : genreDTOS) {
                 for (long i : idGenre) {
                     if (i == genreDTO.getId()) {
                         mapGenre.put(genreDTO, mapGenre.get(genreDTO) + 1);
@@ -73,9 +70,9 @@ public class StatisticsService implements IStatisticsService {
     }
     @Override
     public Map<LocalDateTime,String > getAboutUser(){
-        List<SavedVoiceDTO> savedVoiceDTOS = iVotesService.get();
+        List<VoiceModelDTO> savedVoiceDTOS = iVotesService.get();
         Map<LocalDateTime,String> mapUser = new HashMap<>();
-        for (SavedVoiceDTO savedVoiceDTO : savedVoiceDTOS) {
+        for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
             mapUser.put(savedVoiceDTO.getCreationTime(),savedVoiceDTO.getMessage());
         }
         return mapUser.entrySet().stream()
@@ -84,7 +81,7 @@ public class StatisticsService implements IStatisticsService {
                         , (v1, v2) -> v1, LinkedHashMap::new));
     }
     @Override
-    public StatisticDTO getResult() {
-        return new StatisticDTO(getTopSinger(),getTopGenre(),getAboutUser());
+    public StatisticModelDTO getResult() {
+        return new StatisticModelDTO(getTopSinger(),getTopGenre(),getAboutUser());
     }
 }
