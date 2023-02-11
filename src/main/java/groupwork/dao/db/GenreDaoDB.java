@@ -71,8 +71,8 @@ public class GenreDaoDB implements IGenreDao {
             if (genreEntity == null) {
                 throw new NullPointerException("Delete is not possible. The singer wasn't found in the database");
             }
-                entityManager.remove(genreEntity);
-                entityManager.getTransaction().commit();
+            entityManager.remove(genreEntity);
+            entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
             throw new RuntimeException("DataBase error", e);
@@ -101,7 +101,7 @@ public class GenreDaoDB implements IGenreDao {
     }
 
     @Override
-    public void update(long version,Genre genreEntity) {
+    public void update( Genre genreEntity) {
 //        long id = genreEntity.getId();
         EntityManager entityManager = null;
         try {
@@ -109,19 +109,19 @@ public class GenreDaoDB implements IGenreDao {
             entityManager.getTransaction().begin();
 
             Genre genreEntityDB = entityManager.find(Genre.class, genreEntity.getId());
-            if (genreEntityDB != null && genreEntityDB.getVersion() != version) {
-
-                throw new NullPointerException("Update is not possible. The genre wasn't found in the database");
+            if (genreEntityDB == null) {
+                throw new NullPointerException("Update is not possible. " +
+                        "The genre wasn't found in the database");
             }
-            if(genreEntityDB.getVersion() != version){
+            if (genreEntityDB.getVersion() != genreEntity.getVersion()) {
+                throw new OptimisticLockException("try again");
+            }
+//
+            genreEntityDB.setName(genreEntity.getName());
+            entityManager.flush();
 
-                throw new OptimisticLockException("try again" );}
-                genreEntityDB.setName(genreEntity.getName());
-                entityManager.flush();
-
-//                entityManager.merge(genreEntity);
-                entityManager.getTransaction().commit();
-
+//                entityManager.merge(genreEntityDB);
+            entityManager.getTransaction().commit();
 
 
         } catch (Exception e) {
@@ -150,7 +150,7 @@ public class GenreDaoDB implements IGenreDao {
         } catch (Exception e) {
             throw new RuntimeException("DataBase error", e);
         } finally {
-            if (entityManager != null  && entityManager.isOpen()) {
+            if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
             }
         }

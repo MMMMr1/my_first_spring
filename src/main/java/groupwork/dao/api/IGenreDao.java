@@ -12,6 +12,7 @@ public interface IGenreDao {
 
     void insert(Genre genre);
 
-    void update(long version,Genre genre);
+//    void update(long version,Genre genre);
+    void update(Genre genre);
     Genre get(long id);
 }

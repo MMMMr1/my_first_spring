@@ -76,10 +76,10 @@ public class GenreService implements IGenreService {
         }
 
         if (dao.exist(id)
-//                && version == dao.get(id).getVersion()
+                && version == dao.get(id).getVersion()
         ) {
-            Genre genreEntity = new Genre(id, genre);
-            dao.update(version, genreEntity);
+            Genre genreEntity = new Genre(id, version, genre);
+            dao.update(genreEntity);
         } else {
             throw new IllegalArgumentException("Нет жанра для обновления с таким id");
         }
