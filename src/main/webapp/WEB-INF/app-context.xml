@@ -18,8 +18,6 @@
 
     <bean id="jsonMessageConverter"
                 class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
-    <bean id="xmlMessageConverter"
-                class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters" ref="jsonMessageConverter" />

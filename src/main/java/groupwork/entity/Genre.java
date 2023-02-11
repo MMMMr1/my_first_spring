@@ -3,10 +3,8 @@ package groupwork.entity;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "app.genres")
@@ -16,11 +14,19 @@ public class Genre {
     @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
 
+    @Version
+    private long version;
     @NotNull
     private String name;
 
 
     public Genre() {
+    }
+
+    public Genre(long id, long version, String name) {
+        this.id = id;
+        this.version = version;
+        this.name = name;
     }
 
     public Genre(long id, String name) {
@@ -40,7 +46,19 @@ public class Genre {
         return id;
     }
 
+    public long getVersion() {
+        return version;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

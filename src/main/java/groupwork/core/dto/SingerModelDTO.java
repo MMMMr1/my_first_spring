@@ -5,11 +5,17 @@ import java.util.Objects;
 public class SingerModelDTO {
     private String name;
     private long id;
-    // todo
-// private Long version;
+    private long version;
+
     public SingerModelDTO(String name, long id) {
         this.name = name;
         this.id = id;
+    }
+
+    public SingerModelDTO(String name, long id, long version) {
+        this.name = name;
+        this.id = id;
+        this.version = version;
     }
 
     public SingerModelDTO(String name) {
@@ -17,6 +23,10 @@ public class SingerModelDTO {
     }
 
     public SingerModelDTO() {
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getName() {
@@ -27,12 +37,16 @@ public class SingerModelDTO {
         this.name = name;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
     }
 
     @Override
@@ -52,4 +66,6 @@ public class SingerModelDTO {
     public String toString() {
         return "id = " + id + ",  name = " + name;
     }
+
+
 }

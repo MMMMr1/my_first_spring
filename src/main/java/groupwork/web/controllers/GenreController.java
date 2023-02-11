@@ -1,5 +1,6 @@
 package groupwork.web.controllers;
 
+import groupwork.core.dto.GenreCardModelDTO;
 import groupwork.core.dto.GenreDTO;
 import groupwork.core.dto.GenreModelDTO;
 import groupwork.service.api.IGenreService;
@@ -23,19 +24,18 @@ public class GenreController {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public GenreModelDTO card(@PathVariable("id") Long id){
+    public GenreCardModelDTO card(@PathVariable("id") Long id){
         return genreService.get(id);
     }
 
-    @RequestMapping(path = "/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/{id}/version/{version}", method = RequestMethod.PUT)
     protected void doPut(@PathVariable("id") Long id,
-//todo
-//                         @PathVariable("version") Long version,
-//оптимистические блокировки
-//поменять genreDto на объект только с именем
+                         @PathVariable("version") Long version,
                          @RequestBody GenreDTO genreDTO) {
-        //worked
-      genreService.update(id,genreDTO);
+        //оптимистические блокировки
+//поменять genreDto на объект только с именем
+
+      genreService.update(id,version,genreDTO);
     }
 
     @RequestMapping(method = RequestMethod.POST)

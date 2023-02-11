@@ -1,5 +1,6 @@
 package groupwork.service.api;
 
+import groupwork.core.dto.GenreCardModelDTO;
 import groupwork.core.dto.GenreDTO;
 import groupwork.core.dto.GenreModelDTO;
 
@@ -15,7 +16,7 @@ public interface IGenreService {
 
     void insert(GenreDTO genreDTO);
 
-    void update(long id, GenreDTO genreDTO);
-    GenreModelDTO get(long id);
+    void update(long id, long version, GenreDTO genreDTO);
+    GenreCardModelDTO get(long id);
 
 }

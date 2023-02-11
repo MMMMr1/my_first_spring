@@ -5,21 +5,29 @@ import java.util.Objects;
 public class GenreModelDTO {
     private String name;
     private long id;
-// todo
-// private Long version;
+//    private long version;
 
     public GenreModelDTO(String name, long id) {
         this.name = name;
         this.id = id;
     }
 
-    public GenreModelDTO(String name) {
-        this.name = name;
-    }
+//    public GenreModelDTO(String name, long id, long version) {
+//        this.name = name;
+//        this.id = id;
+//        this.version = version;
+//    }
+
+    //    public GenreModelDTO(String name) {
+//        this.name = name;
+//    }
 
     public GenreModelDTO() {
     }
 
+//    public long getVersion() {
+//        return version;
+//    }
     public String getName() {
         return name;
     }
@@ -32,7 +40,7 @@ public class GenreModelDTO {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -51,6 +59,7 @@ public class GenreModelDTO {
 
     @Override
     public String toString() {
-        return "id = " + id + ",  name = " + name;
-    }
+            return "id = " + id + ",  name = " + name;
+        }
+
 }

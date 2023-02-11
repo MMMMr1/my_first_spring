@@ -43,7 +43,7 @@ public class VoteService implements IVoteService {
 
         List<Genre> genres = new ArrayList<>();
         for (long genreId : savedVoiceDTO.getGenre()) {
-            GenreModelDTO genreModelDTO = genreService.get(genreId);
+            GenreCardModelDTO genreModelDTO = genreService.get(genreId);
             genres.add(new Genre(genreModelDTO.getId(), genreModelDTO.getName()));
         }
 

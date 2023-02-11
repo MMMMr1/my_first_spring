@@ -1,5 +1,6 @@
 package groupwork.service;
 
+import groupwork.core.dto.GenreCardModelDTO;
 import groupwork.core.dto.GenreModelDTO;
 import groupwork.dao.api.IGenreDao;
 import groupwork.core.dto.GenreDTO;
@@ -63,7 +64,7 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public void update(long id, GenreDTO genreDTO) {
+    public void update(long id, long version, GenreDTO genreDTO) {
         String genre = genreDTO.getName();
 
         if (genre == null || genre.isBlank()) {
@@ -74,17 +75,19 @@ public class GenreService implements IGenreService {
             throw new IllegalArgumentException("Введите id жанра");
         }
 
-        if (dao.exist(id)) {
+        if (dao.exist(id)
+//                && version == dao.get(id).getVersion()
+        ) {
             Genre genreEntity = new Genre(id, genre);
-            dao.update(genreEntity);
+            dao.update(version, genreEntity);
         } else {
             throw new IllegalArgumentException("Нет жанра для обновления с таким id");
         }
     }
 
     @Override
-    public GenreModelDTO get(long id) {
+    public GenreCardModelDTO get(long id) {
         Genre genreEntity = this.dao.get(id);
-        return new GenreModelDTO(genreEntity.getName(), genreEntity.getId());
+        return new GenreCardModelDTO(genreEntity.getName(), genreEntity.getId(), genreEntity.getVersion());
     }
 }
