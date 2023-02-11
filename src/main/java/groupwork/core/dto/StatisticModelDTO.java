@@ -1,20 +1,22 @@
 package groupwork.core.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 public class StatisticModelDTO {
 
     private final Map<SingerModelDTO, Integer> mapSingers;
     private final Map<GenreModelDTO, Integer> mapGenres;
-    private final Map<LocalDateTime, String> mapUserInfo;
+    private final List<AboutRow> listUsers;
+
 
     public StatisticModelDTO(Map<SingerModelDTO, Integer> mapSingers,
                              Map<GenreModelDTO, Integer> mapGenres,
-                             Map<LocalDateTime, String > mapUserInfo) {
+                             List<AboutRow> listUsers) {
         this.mapSingers = mapSingers;
         this.mapGenres = mapGenres;
-        this.mapUserInfo = mapUserInfo;
+        this.listUsers = listUsers;
     }
 
     public Map<SingerModelDTO, Integer> getMapSingers() {
@@ -24,10 +26,7 @@ public class StatisticModelDTO {
     public Map<GenreModelDTO, Integer> getMapGenres() {
         return mapGenres;
     }
-
-    public Map<LocalDateTime, String> getMapUserInfo() {
-        return mapUserInfo;
+    public List<AboutRow> getListUsers() {
+        return listUsers;
     }
-
-
 }

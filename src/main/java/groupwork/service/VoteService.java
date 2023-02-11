@@ -19,7 +19,9 @@ public class VoteService implements IVoteService {
 
     private final IGenreService genreService;
 
-    public VoteService(IVoteDao voiceDao, ISingerService singerService, IGenreService genreService) {
+    public VoteService(IVoteDao voiceDao,
+                       ISingerService singerService,
+                       IGenreService genreService) {
         this.voiceDao = voiceDao;
         this.singerService = singerService;
         this.genreService = genreService;
@@ -29,14 +31,14 @@ public class VoteService implements IVoteService {
     public void save(VoiceDTO voice) {
         check(voice);
 
-        VoiceModelDTO savedVoiceDTO = new VoiceModelDTO(voice);
+        VoiceSavedDTO savedVoiceDTO = new VoiceSavedDTO(voice);
 
-//        String email = savedVoiceDTO.getMail();
         LocalDateTime creationTime = savedVoiceDTO.getCreationTime();
         String message = savedVoiceDTO.getMessage();
 
         long  singerId = savedVoiceDTO.getSinger();
         SingerModelDTO singerModelDTO = singerService.get(singerId);
+
         Singer singer = new Singer(singerModelDTO.getId(), singerModelDTO.getName());
 
         List<Genre> genres = new ArrayList<>();
@@ -45,7 +47,7 @@ public class VoteService implements IVoteService {
             genres.add(new Genre(genreModelDTO.getId(), genreModelDTO.getName()));
         }
 
-        Voice savedVoice = new Voice(singer, genres, message, creationTime );
+        Voice savedVoice = new Voice(singer, genres, message, creationTime);
         voiceDao.save(savedVoice);
     }
 
@@ -57,16 +59,16 @@ public class VoteService implements IVoteService {
         for (Voice voice : all) {
             LocalDateTime creationTime = voice.getCreationTime();
             String message = voice.getMessage();
-            Long id_singer = voice.getSinger().getId();
 
-            List<Genre> genre = voice.getGenres();
-            long[] genres = new long[genre.size()];
-            for (int i = 0; i < genres.length; i++) {
-                genres[i] = genre.get(i).getId();
+            Singer singer = voice.getSinger();
+            SingerModelDTO singers = new SingerModelDTO(singer.getName(), singer.getId());
+
+            List<GenreModelDTO> genre = new ArrayList<>();
+            for (Genre val :voice.getGenres()) {
+                genre.add(new GenreModelDTO(val.getName(), val.getId()));
             }
 
-            VoiceDTO voiceDTO = new VoiceDTO(id_singer, genres, message);
-            savedVoiceDTOS.add(new VoiceModelDTO(voiceDTO, creationTime));
+            savedVoiceDTOS.add(new VoiceModelDTO(singers, genre, creationTime,message));
         }
         return savedVoiceDTOS;
     }

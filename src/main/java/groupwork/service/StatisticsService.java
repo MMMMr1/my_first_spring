@@ -6,37 +6,37 @@ import groupwork.service.api.ISingerService;
 import groupwork.service.api.IStatisticsService;
 import groupwork.service.api.IVoteService;
 
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
 
 public class StatisticsService implements IStatisticsService {
 
-    private final IVoteService iVotesService;
-    private final ISingerService iSingerService;
-    private final IGenreService iGenreService;
+    private final IVoteService votesService;
+    private final ISingerService singerService;
+    private final IGenreService genreService;
 
-
-    public StatisticsService(IVoteService iVotesService,
-                             ISingerService iSingerService,
-                             IGenreService iGenreService) {
-        this.iVotesService = iVotesService;
-        this.iSingerService = iSingerService;
-        this.iGenreService = iGenreService;
+    public StatisticsService(IVoteService votesService,
+                             ISingerService singerService,
+                             IGenreService genreService) {
+        this.votesService = votesService;
+        this.singerService = singerService;
+        this.genreService = genreService;
     }
+
     @Override
     public Map<SingerModelDTO, Integer> getTopSinger(){
+//        todo Map -> to List of Row<K,T>
         Map<SingerModelDTO, Integer> mapSinger = new HashMap<>();
-        List<SingerModelDTO> singerDTOS = iSingerService.get();
+        List<SingerModelDTO> singerDTOS = singerService.get();
         for (SingerModelDTO singer : singerDTOS) {
             mapSinger.put(singer, 0);
         }
-        List<VoiceModelDTO> savedVoiceDTOS = iVotesService.get();
+        List<VoiceModelDTO> savedVoiceDTOS = votesService.get();
         for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
-            long idSinger = savedVoiceDTO.getSinger();
+            SingerModelDTO singer = savedVoiceDTO.getSinger();
             for (SingerModelDTO SingerDTO : singerDTOS) {
-                if (idSinger == SingerDTO.getId()) {
+                if (singer.equals(SingerDTO) ){
                     mapSinger.put(SingerDTO, mapSinger.get(SingerDTO) + 1);
                 }
             }
@@ -48,17 +48,17 @@ public class StatisticsService implements IStatisticsService {
     @Override
     public Map<GenreModelDTO, Integer> getTopGenre(){
         Map<GenreModelDTO, Integer> mapGenre = new HashMap<>();
-        List<GenreModelDTO> genreDTOS = iGenreService.get();
+        List<GenreModelDTO> genreDTOS = genreService.get();
 
         for (GenreModelDTO genreDTO : genreDTOS) {
             mapGenre.put(genreDTO, 0);
         }
-        List<VoiceModelDTO> savedVoiceDTOS = iVotesService.get();
+        List<VoiceModelDTO> savedVoiceDTOS = votesService.get();
         for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
-            long[] idGenre = savedVoiceDTO.getGenre();
+            List<GenreModelDTO> idGenre = savedVoiceDTO.getGenres();
             for (GenreModelDTO genreDTO : genreDTOS) {
-                for (long i : idGenre) {
-                    if (i == genreDTO.getId()) {
+                for (GenreModelDTO val : idGenre) {
+                    if (val.equals(genreDTO)) {
                         mapGenre.put(genreDTO, mapGenre.get(genreDTO) + 1);
                     }
                 }
@@ -68,17 +68,18 @@ public class StatisticsService implements IStatisticsService {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue
                         , (v1, v2) -> v1, LinkedHashMap::new));
     }
+
     @Override
-    public Map<LocalDateTime,String > getAboutUser(){
-        List<VoiceModelDTO> savedVoiceDTOS = iVotesService.get();
-        Map<LocalDateTime,String> mapUser = new HashMap<>();
+    public List<AboutRow> getAboutUser(){
+        List<VoiceModelDTO> savedVoiceDTOS = votesService.get();
+        List<AboutRow> userList = new ArrayList<>();
         for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
-            mapUser.put(savedVoiceDTO.getCreationTime(),savedVoiceDTO.getMessage());
+            userList.add(new AboutRow( savedVoiceDTO.getCreationTime(),savedVoiceDTO.getMessage()));
         }
-        return mapUser.entrySet().stream()
-                .sorted(Map.Entry.comparingByKey(Collections.reverseOrder(LocalDateTime::compareTo)))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue
-                        , (v1, v2) -> v1, LinkedHashMap::new));
+        return votesService.get().stream()
+                .map(s -> new AboutRow(s.getCreationTime(),s.getMessage()))
+                .sorted(Comparator.comparing(AboutRow::getCreationTime).reversed())
+                .collect(Collectors.toList());
     }
     @Override
     public StatisticModelDTO getResult() {

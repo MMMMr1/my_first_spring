@@ -4,9 +4,6 @@ import java.util.Objects;
 
 public class SingerDTO {
     private String name;
-
-
-
     public SingerDTO(String name) {
         this.name = name;
     }

@@ -15,6 +15,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 
@@ -33,10 +34,13 @@ public class MainSpring {
               System.out.println(genreDao);
              System.out.println();
 
-              genreService.insert(new GenreDTO("jazz1"));
-              genreService.insert(new GenreDTO("jazz2"));
-            genreService.insert(new GenreDTO("jazz3"));
-             genreService.insert(new GenreDTO("jazz4"));
+              genreService.insert(new GenreDTO("pop"));
+              genreService.insert(new GenreDTO("jazz"));
+            genreService.insert(new GenreDTO("classic"));
+             genreService.insert(new GenreDTO("rok"));
+             genreService.insert(new GenreDTO("hard - rok"));
+             genreService.insert(new GenreDTO("metal"));
+             genreService.insert(new GenreDTO("country"));
               logger.log(Level.INFO, "-----------------> getAll GENRE");
               System.out.println(genreService.get());
               System.out.println();
@@ -63,6 +67,9 @@ public class MainSpring {
               singerService.insert(new SingerDTO("Maroon"));
               singerService.insert(new SingerDTO("Imagine Dragons"));
               singerService.insert(new SingerDTO("Cris Rea"));
+              singerService.insert(new SingerDTO("Elton John"));
+              singerService.insert(new SingerDTO("Dua Lippa"));
+              singerService.insert(new SingerDTO("David Garret"));
               logger.log(Level.INFO, "--////////---------------> getAll Singer");
               System.out.println(singerService.get());
               System.out.println();
@@ -87,8 +94,8 @@ public class MainSpring {
               System.out.println();
 
               voteService.save(new VoiceDTO(2, new long[]{1, 2, 3}, "hello1"));
-              voteService.save(new VoiceDTO(1, new long[]{1, 2, 3}, "hello2"));
-              voteService.save(new VoiceDTO(2, new long[]{1, 2, 3}, "hello3"));
+              voteService.save(new VoiceDTO(1, new long[]{1, 5, 3}, "hello2"));
+              voteService.save(new VoiceDTO(2, new long[]{1, 6, 7}, "hello3"));
               logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll VOTES");
               System.out.println(voteService.get());
               System.out.println();
@@ -101,11 +108,30 @@ public class MainSpring {
               logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll topSinger");
               topSinger.forEach((k, v) -> System.out.println(k.getName() + " " + v));
 
-              Map<LocalDateTime, String> aboutUser = statisticsService.getAboutUser();
+              List<AboutRow> aboutUser = statisticsService.getAboutUser();
               logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll getAboutUser");
-              aboutUser.forEach((k, v) -> System.out.println(k + " " + v));
+              aboutUser.forEach((k ) -> System.out.println(k.getMessage() + " " + k.getCreationTime() ));
          }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //}
 //    <bean id="GenreDaoSpring" class="groupwork.dao.db.GenreDaoDB">
 //        <constructor-arg index="0" ref="ManagerSpring"/>

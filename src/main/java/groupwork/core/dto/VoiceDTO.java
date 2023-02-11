@@ -8,6 +8,9 @@ public class VoiceDTO {
     private long[] genre;
     private String message;
 
+    public VoiceDTO() {
+    }
+
     public VoiceDTO(long singer, long[] genre, String message ) {
         this.singer = singer;
         this.genre = genre;

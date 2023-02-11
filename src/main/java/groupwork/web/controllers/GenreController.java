@@ -26,9 +26,8 @@ public class GenreController {
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public GenreModelDTO card(@PathVariable("id") Long id){
 //        todo
-        return null;
+        return genreService.get(id);
     }
-
 
     @RequestMapping(path = "/{id}", method = RequestMethod.PUT)
     protected void doPut(@PathVariable("id") Long id,
@@ -37,8 +36,6 @@ public class GenreController {
 //оптимистические блокировки
 //поменять genreDto на объект только с именем
                          @RequestBody GenreDTO genreDTO) {
-
-
         //worked
       genreService.update(id,genreDTO);
     }
