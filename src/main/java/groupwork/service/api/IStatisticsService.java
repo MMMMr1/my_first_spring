@@ -9,8 +9,12 @@ import java.util.Map;
 public interface IStatisticsService {
 
     StatisticModelDTO getResult();
-    public Map<SingerModelDTO, Integer> getTopSinger();
-    public Map<GenreModelDTO, Integer> getTopGenre();
-//    Map<LocalDateTime,String > getAboutUser();
+
+    List<SingerStatisticModelDTO> getTopSinger();
+
+    //    Map<SingerModelDTO, Integer> getTopSinger();
+    List<GenreStatisticModelDTO> getTopGenre();
+
+    //    Map<GenreModelDTO, Integer> getTopGenre();
     List<AboutRow> getAboutUser();
 }

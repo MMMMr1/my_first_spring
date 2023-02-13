@@ -25,7 +25,7 @@ public class StatisticsService implements IStatisticsService {
     }
 
     @Override
-    public Map<SingerModelDTO, Integer> getTopSinger(){
+    public List<SingerStatisticModelDTO> getTopSinger(){
 //        todo Map -> to List of Row<K,T>
         Map<SingerModelDTO, Integer> mapSinger = new HashMap<>();
         List<SingerModelDTO> singerDTOS = singerService.get();
@@ -40,13 +40,16 @@ public class StatisticsService implements IStatisticsService {
                     mapSinger.put(SingerDTO, mapSinger.get(SingerDTO) + 1);
                 }
             }
-        }return  mapSinger.entrySet().stream()
+        }
+        LinkedHashMap<SingerModelDTO, Integer> collect = mapSinger.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Collections.reverseOrder(Integer::compare)))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue
                         , (v1, v2) -> v1, LinkedHashMap::new));
+
+        return  collect.entrySet().stream().map((k) -> new SingerStatisticModelDTO(k.getKey().getName(), k.getKey().getId(), k.getValue())).collect(Collectors.toList());
     }
     @Override
-    public Map<GenreModelDTO, Integer> getTopGenre(){
+    public  List<GenreStatisticModelDTO> getTopGenre(){
         Map<GenreModelDTO, Integer> mapGenre = new HashMap<>();
         List<GenreModelDTO> genreDTOS = genreService.get();
 
@@ -63,19 +66,16 @@ public class StatisticsService implements IStatisticsService {
                     }
                 }
             }
-        }return mapGenre.entrySet().stream()
+        }
+        LinkedHashMap<GenreModelDTO, Integer> collect = mapGenre.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Collections.reverseOrder(Integer::compare)))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue
                         , (v1, v2) -> v1, LinkedHashMap::new));
+        return collect.entrySet().stream().map((k) -> new GenreStatisticModelDTO(k.getKey().getName(), k.getKey().getId(), k.getValue())).collect(Collectors.toList());
     }
 
     @Override
     public List<AboutRow> getAboutUser(){
-//        List<VoiceModelDTO> savedVoiceDTOS = votesService.get();
-//        List<AboutRow> userList = new ArrayList<>();
-//        for (VoiceModelDTO savedVoiceDTO : savedVoiceDTOS) {
-//            userList.add(new AboutRow( savedVoiceDTO.getCreationTime(),savedVoiceDTO.getMessage()));
-//        }
         return votesService.get().stream()
                 .map(s -> new AboutRow(s.getMessage(), s.getCreationTime()))
                 .sorted(Comparator.comparing(AboutRow::getCreationTime).reversed())
@@ -83,6 +83,6 @@ public class StatisticsService implements IStatisticsService {
     }
     @Override
     public StatisticModelDTO getResult() {
-        return new StatisticModelDTO(getTopSinger(),getTopGenre(),getAboutUser());
+        return new StatisticModelDTO(getTopSinger(), getTopGenre(), getAboutUser());
     }
 }
