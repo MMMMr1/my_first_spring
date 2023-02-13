@@ -13,14 +13,12 @@ import javax.servlet.http.HttpServlet;
 @RestController
 @RequestMapping("/answer")
 public class AnswerController extends HttpServlet {
-
     private  IVoteService voteService;
     public AnswerController(IVoteService voteService) {
         this.voteService = voteService;
     }
     @RequestMapping(method = RequestMethod.POST)
     protected void doPost(@RequestBody VoiceDTO voiceDTO) {
-
         voteService.save(voiceDTO);
     }
 }

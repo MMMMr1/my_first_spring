@@ -10,84 +10,66 @@ import groupwork.service.api.IGenreService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GenreService implements IGenreService {
-
     private final IGenreDao dao;
-
     public GenreService(IGenreDao dao) {
         this.dao = dao;
     }
-
     @Override
-    public boolean check(long number) {
-        if (number == 0) {
-            throw new IllegalArgumentException("Введите id жанра");
-        }
-        return this.dao.exist(number);
+    public boolean exist(long id) {
+        checkId(id);
+        return dao.exist(id);
     }
-
     @Override
     public List<GenreModelDTO> get() {
-        List<Genre> genreList = dao.get();
-
-        List<GenreModelDTO> list = new ArrayList<>();
-
-        for (Genre genreEntity : genreList) {
-            list.add(new GenreModelDTO(genreEntity.getName(), genreEntity.getId()));
-        }
-
-        return list;
+        return dao.get().stream()
+                .map(s -> new GenreModelDTO(s.getName(), s.getId()))
+                .collect(Collectors.toList());
     }
-
     @Override
     public void delete(long id) {
-//        long id = genreDTO.getId();
-        if (id == 0) {
-            throw new IllegalArgumentException("Введите номер жанра");
-        }
         if (dao.exist(id)) {
             dao.delete(new Genre(id));
         } else {
-            throw new IllegalArgumentException("Нет жанра для удаления с таким id");
+            throw new IllegalArgumentException("The genre with such id is not exist");
         }
     }
-
     @Override
     public void insert(GenreDTO genreDTO) {
         String name = genreDTO.getName();
-        if (name != null && !name.isBlank()) {
-            dao.insert(new Genre(name));
-        } else {
-            throw new IllegalArgumentException("Не введен исполнитель");
-        }
+        checkName(name);
+        dao.insert(new Genre(name));
     }
-
     @Override
     public void update(long id, long version, GenreDTO genreDTO) {
-        String genre = genreDTO.getName();
-
-        if (genre == null || genre.isBlank()) {
-            throw new IllegalArgumentException("Не введен жанр");
-        }
-
-        if (id == 0) {
-            throw new IllegalArgumentException("Введите id жанра");
-        }
-
-        if (dao.exist(id)
-                && version == dao.get(id).getVersion()
-        ) {
-            Genre genreEntity = new Genre(id, version, genre);
-            dao.update(genreEntity);
+        String name = genreDTO.getName();
+        checkName(name);
+        checkId(id);
+        Genre genreDao = dao.get(id);
+        if (genreDao != null && version == genreDao.getVersion()) {
+            dao.update(new Genre(id, version, name));
         } else {
-            throw new IllegalArgumentException("Нет жанра для обновления с таким id");
+            throw new IllegalArgumentException("The data is incorrect");
         }
     }
-
     @Override
     public GenreCardModelDTO get(long id) {
-        Genre genreEntity = this.dao.get(id);
-        return new GenreCardModelDTO(genreEntity.getName(), genreEntity.getId(), genreEntity.getVersion());
+        checkId(id);
+        Genre genreEntity = dao.get(id);
+        return new GenreCardModelDTO(genreEntity.getName(),
+                                     genreEntity.getId(),
+                                     genreEntity.getVersion());
+    }
+    private void checkName(String name) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("The name of performer is not entered");
+        }
+    }
+    private void checkId(long id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("The performer number is incorrect");
+        }
     }
 }

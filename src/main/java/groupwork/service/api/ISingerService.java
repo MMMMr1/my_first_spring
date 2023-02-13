@@ -1,5 +1,6 @@
 package groupwork.service.api;
 
+import groupwork.core.dto.SingerCardModelDTO;
 import groupwork.core.dto.SingerDTO;
 import groupwork.core.dto.SingerModelDTO;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 public interface ISingerService {
 
-    boolean check(long number);
+    boolean exist(long id);
 
     List<SingerModelDTO> get();
 
@@ -16,6 +17,6 @@ public interface ISingerService {
 
     void insert(SingerDTO singerDTO);
 
-    void update(long id, SingerDTO singerDTO);
-    SingerModelDTO get(long id);
+    void update(long id, long version, SingerDTO singerDTO);
+    SingerCardModelDTO get(long id);
 }

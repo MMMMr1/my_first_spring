@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IGenreService {
 
-    boolean check(long number);
+    boolean exist(long id);
 
     List<GenreModelDTO> get();
 

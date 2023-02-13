@@ -14,11 +14,8 @@ import java.util.*;
 
 public class VoteService implements IVoteService {
     private final IVoteDao voiceDao;
-
     private final ISingerService singerService;
-
     private final IGenreService genreService;
-
     public VoteService(IVoteDao voiceDao,
                        ISingerService singerService,
                        IGenreService genreService) {
@@ -37,8 +34,7 @@ public class VoteService implements IVoteService {
         String message = savedVoiceDTO.getMessage();
 
         long  singerId = savedVoiceDTO.getSinger();
-        SingerModelDTO singerModelDTO = singerService.get(singerId);
-
+        SingerCardModelDTO singerModelDTO = singerService.get(singerId);
         Singer singer = new Singer(singerModelDTO.getId(), singerModelDTO.getName());
 
         List<Genre> genres = new ArrayList<>();
@@ -75,7 +71,7 @@ public class VoteService implements IVoteService {
 
     private void check(VoiceDTO voice) {
         long singer = voice.getSinger();
-        if (!singerService.check(voice.getSinger())) {
+        if (!singerService.exist(voice.getSinger())) {
             throw new IllegalArgumentException("Артист №" + singer + " отсутствует в списке выбора");
         }
 
@@ -96,7 +92,7 @@ public class VoteService implements IVoteService {
         }
 
         for (Long genre : setGenre) {
-            if (!genreService.check(genre)) {
+            if (!genreService.exist(genre)) {
                 throw new IllegalArgumentException("Введенный жанр №" + genre + " не содержится в списке");
             }
         }

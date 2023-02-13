@@ -13,6 +13,8 @@ public class Singer {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name="increment", strategy = "increment")
     private long id;
+    @Version
+    private long version;
     @NotNull
     private String name;
 
@@ -20,17 +22,26 @@ public class Singer {
     public Singer() {
     }
 
+    public Singer(long id, long version, String name) {
+        this.id = id;
+        this.version = version;
+        this.name = name;
+    }
+
     public Singer(long id, String name) {
         this.id = id;
         this.name = name;
     }
+    public Singer(long id) {
+        this.id = id;
+    }
+
+    public long getVersion() {
+        return version;
+    }
 
     public Singer(String name) {
         this.name = name;
-    }
-
-    public Singer(long id) {
-        this.id = id;
     }
 
     public long getId() {
@@ -40,4 +51,5 @@ public class Singer {
     public String getName() {
         return name;
     }
+
 }

@@ -8,9 +8,6 @@ import groupwork.entity.Genre;
 
 import javax.persistence.EntityManager;
 import javax.persistence.OptimisticLockException;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class GenreDaoDB implements IGenreDao {
@@ -101,14 +98,14 @@ public class GenreDaoDB implements IGenreDao {
     }
 
     @Override
-    public void update( Genre genreEntity) {
-//        long id = genreEntity.getId();
+    public void update(Genre genreEntity) {
+        long id = genreEntity.getId();
         EntityManager entityManager = null;
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
 
-            Genre genreEntityDB = entityManager.find(Genre.class, genreEntity.getId());
+            Genre genreEntityDB = entityManager.find(Genre.class, id);
             if (genreEntityDB == null) {
                 throw new NullPointerException("Update is not possible. " +
                         "The genre wasn't found in the database");
@@ -117,12 +114,10 @@ public class GenreDaoDB implements IGenreDao {
                 throw new OptimisticLockException("try again");
             }
 //
-            genreEntityDB.setName(genreEntity.getName());
-            entityManager.flush();
-
-//                entityManager.merge(genreEntityDB);
+//            genreEntityDB.setName(genreEntity.getName());
+//            entityManager.flush();
+            entityManager.merge(genreEntity);
             entityManager.getTransaction().commit();
-
 
         } catch (Exception e) {
             entityManager.getTransaction().rollback();

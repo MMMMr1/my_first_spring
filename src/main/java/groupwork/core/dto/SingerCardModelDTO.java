@@ -2,17 +2,22 @@ package groupwork.core.dto;
 
 import java.util.Objects;
 
-public class GenreCardModelDTO {
+public class SingerCardModelDTO {
     private String name;
     private long id;
     private long version;
 
-    public GenreCardModelDTO(String name, long id, long version) {
+    public SingerCardModelDTO(String name, long id, long version) {
         this.name = name;
         this.id = id;
         this.version = version;
     }
-    public GenreCardModelDTO() {
+
+    public SingerCardModelDTO(String name) {
+        this.name = name;
+    }
+
+    public SingerCardModelDTO() {
     }
 
     public long getVersion() {
@@ -30,7 +35,7 @@ public class GenreCardModelDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        GenreCardModelDTO that = (GenreCardModelDTO) o;
+        SingerCardModelDTO that = (SingerCardModelDTO) o;
 
         if (id != that.id) return false;
         if (version != that.version) return false;
@@ -47,7 +52,7 @@ public class GenreCardModelDTO {
 
     @Override
     public String toString() {
-        return "GenreCardModelDTO{" +
+        return "SingerCardModelDTO{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", version=" + version +

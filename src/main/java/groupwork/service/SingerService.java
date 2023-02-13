@@ -1,6 +1,7 @@
 package groupwork.service;
 
 import groupwork.core.dto.GenreModelDTO;
+import groupwork.core.dto.SingerCardModelDTO;
 import groupwork.core.dto.SingerModelDTO;
 import groupwork.dao.api.ISingerDao;
 import groupwork.core.dto.SingerDTO;
@@ -9,75 +10,66 @@ import groupwork.service.api.ISingerService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SingerService implements ISingerService {
-
     private final ISingerDao dao;
-
     public SingerService(ISingerDao dao) {
         this.dao = dao;
     }
-
     @Override
-    public boolean check(long number) {
-        if (number == 0) {
-            throw new IllegalArgumentException("Введите номер исполнителя");
-        }
-        return this.dao.exist(number);
-
+    public boolean exist(long id) {
+        checkId(id);
+        return dao.exist(id);
     }
-
     @Override
     public List<SingerModelDTO> get() {
-        List<Singer> singerList = dao.get();
-
-        List<SingerModelDTO>list = new ArrayList<>();
-
-        for (Singer singerEntity : singerList) {
-            list.add(new SingerModelDTO(singerEntity.getName(), singerEntity.getId()));
-        }
-
-        return list;
+        return dao.get().stream()
+                .map(s -> new SingerModelDTO(s.getName(), s.getId()))
+                .collect(Collectors.toList());
     }
-
     @Override
     public void delete(long id) {
-//        long id = singerDTO.getId();
-        if(dao.exist(id)){
+        if (exist(id)) {
             dao.delete(new Singer(id));
-        }else {
-            throw new IllegalArgumentException("Нет исполнителя для удаления с таким id");
+        } else {
+            throw new IllegalArgumentException("The performer with such id is not existed");
         }
     }
-
     @Override
     public void insert(SingerDTO singerDTO) {
         String name = singerDTO.getName();
-        if (name != null && !name.isBlank()) {
-            dao.insert(new Singer(name));
+        checkName(name);
+        dao.insert(new Singer(name));
+    }
+    @Override
+    public void update(long id, long version, SingerDTO singerDTO) {
+        String name = singerDTO.getName();
+        checkName(name);
+        checkId(id);
+        Singer singerDao = dao.get(id);
+        if (singerDao != null && singerDao.getVersion() == version) {
+            dao.update(new Singer(id, version, name));
         } else {
-            throw new IllegalArgumentException("Не введен исполнитель");
+            throw new IllegalArgumentException("The data is incorrect");
         }
     }
-
     @Override
-    public void update(long id, SingerDTO singerDTO) {
-        String singer = singerDTO.getName();
-        if (singer == null || singer.isBlank()) {
-            throw new IllegalArgumentException("Не введено новое имя исполнителя");
-        }
-
-        if(dao.exist(id)){
-            dao.update(new Singer(id, singer));
-        } else {
-            throw new IllegalArgumentException("Нет исполнителя для обновления с таким id");
+    public SingerCardModelDTO get(long id) {
+        checkId(id);
+        Singer singerEntity = dao.get(id);
+        return new SingerCardModelDTO(singerEntity.getName(),
+                                      singerEntity.getId(),
+                                      singerEntity.getVersion());
+    }
+    private void checkName(String name) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("The name of performer is not entered");
         }
     }
-
-    @Override
-    public SingerModelDTO get(long id) {
-        Singer singerEntity = this.dao.get(id);
-        return new SingerModelDTO(singerEntity.getName(), singerEntity.getId());
-
+    private void checkId(long id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("The performer number is incorrect");
+        }
     }
 }
