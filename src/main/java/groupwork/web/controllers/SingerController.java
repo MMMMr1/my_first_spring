@@ -36,8 +36,9 @@ public class SingerController {
     public void doPost(@RequestBody SingerDTO singerDTO) {
         singerService.insert(singerDTO);
     }
-    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    public void doDelete(@PathVariable("id") Long id) {
-        singerService.delete(id);
+    @RequestMapping(path = "/{id}/version/{version}", method = RequestMethod.DELETE)
+    protected void doDelete(@PathVariable("id") Long id,
+                            @PathVariable("version") Long version) {
+        singerService.delete(id,version);
     }
 }

@@ -29,9 +29,11 @@ public class SingerService implements ISingerService {
                 .collect(Collectors.toList());
     }
     @Override
-    public void delete(long id) {
-        if (exist(id)) {
-            dao.delete(new Singer(id));
+    public void delete(long id, long version) {
+        checkId(id);
+        Singer singer = dao.get(id);
+        if (singer != null && version == singer.getVersion()) {
+            dao.delete(new Singer(id,version));
         } else {
             throw new IllegalArgumentException("The performer with such id is not existed");
         }

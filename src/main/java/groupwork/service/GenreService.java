@@ -29,9 +29,11 @@ public class GenreService implements IGenreService {
                 .collect(Collectors.toList());
     }
     @Override
-    public void delete(long id) {
-        if (dao.exist(id)) {
-            dao.delete(new Genre(id));
+    public void delete(long id, long version) {
+        checkId(id);
+        Genre genre = dao.get(id);
+        if (genre != null && version == genre.getVersion()) {
+            dao.delete(new Genre(id,version));
         } else {
             throw new IllegalArgumentException("The genre with such id is not exist");
         }

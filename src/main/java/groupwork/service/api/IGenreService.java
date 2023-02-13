@@ -12,7 +12,7 @@ public interface IGenreService {
 
     List<GenreModelDTO> get();
 
-    void delete(long id);
+    void delete(long id,long version);
 
     void insert(GenreDTO genreDTO);
 

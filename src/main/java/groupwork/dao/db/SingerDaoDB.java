@@ -39,7 +39,6 @@ public class SingerDaoDB implements ISingerDao {
             }
         }
     }
-
     @Override
     public boolean exist(long id) {
         EntityManager entityManager = null;
@@ -49,7 +48,6 @@ public class SingerDaoDB implements ISingerDao {
             Singer singerEntity = entityManager.find(Singer.class, id);
             entityManager.getTransaction().commit();
             return singerEntity != null;
-
         } catch (Exception e) {
             throw new RuntimeException("DataBase error", e);
         } finally {
@@ -58,7 +56,6 @@ public class SingerDaoDB implements ISingerDao {
             }
         }
     }
-
     @Override
     public void delete(Singer singerEntity) {
         long id = singerEntity.getId();
@@ -66,11 +63,14 @@ public class SingerDaoDB implements ISingerDao {
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
-            singerEntity = entityManager.find(Singer.class, id);
-            if (singerEntity == null) {
+            Singer singer = entityManager.find(Singer.class, id);
+            if (singer == null) {
                 throw new NullPointerException("Delete is not possible. The singer wasn't found in the database");
             }
-            entityManager.remove(singerEntity);
+            if (singer.getVersion() != singerEntity.getVersion()) {
+                throw new OptimisticLockException("version is incorrect");
+            }
+            entityManager.remove(singer);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
@@ -81,7 +81,6 @@ public class SingerDaoDB implements ISingerDao {
             }
         }
     }
-
     @Override
     public void insert(Singer singerEntity) {
         EntityManager entityManager = null;
@@ -98,7 +97,6 @@ public class SingerDaoDB implements ISingerDao {
             }
         }
     }
-
     @Override
     public void update(Singer singerEntity) {
         long id = singerEntity.getId();
@@ -107,13 +105,13 @@ public class SingerDaoDB implements ISingerDao {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
 
-            Singer singerEntityDB = entityManager.find(Singer.class, id);
+            Singer singer = entityManager.find(Singer.class, id);
 
-            if (singerEntityDB == null) {
+            if (singer == null) {
                 throw new NullPointerException("Update is not possible. " +
                         "The singer wasn't found in the database");
             }
-            if (singerEntityDB.getVersion() != singerEntityDB.getVersion()) {
+            if (singer.getVersion() != singerEntity.getVersion()) {
                 throw new OptimisticLockException("try again");
             }
             entityManager.merge(singerEntity);
@@ -128,21 +126,19 @@ public class SingerDaoDB implements ISingerDao {
             }
         }
     }
-
     @Override
     public Singer get(long id) {
         EntityManager entityManager = null;
-        Singer singerEntity;
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
-            singerEntity = entityManager.find(Singer.class, id);
+            Singer singer = entityManager.find(Singer.class, id);
             entityManager.getTransaction().commit();
 
-            if (singerEntity == null) {
+            if (singer == null) {
                 throw new NullPointerException("The singer wasn't found in the database");
             }
-            return singerEntity;
+            return singer;
         } catch (Exception e) {
             throw new RuntimeException("DataBase error", e);
         } finally {

@@ -6,48 +6,31 @@ public class VoiceSavedDTO implements Comparable<VoiceSavedDTO>{
     private VoiceDTO voice;
     private LocalDateTime creationTime;
 
-//
-//    private boolean authorization;
-
     public VoiceSavedDTO(VoiceDTO voice) {
         this.voice = voice;
         this.creationTime = LocalDateTime.now();
     }
-
-//    public VoiceSavedDTO(VoiceDTO voice, LocalDateTime creationTime) {
-//        this.voice = voice;
-//        this.creationTime = creationTime;
-//    }
-
-
     public VoiceDTO getVoice() {
         return voice;
     }
-
     public void setVoice(VoiceDTO voice) {
         this.voice = voice;
     }
-
     public long getSinger() {
         return voice.getSinger();
     }
-
     public long[] getGenre() {
         return voice.getGenre();
     }
-
     public String getMessage() {
         return voice.getMessage();
     }
-
     public LocalDateTime getCreationTime() {
         return creationTime;
     }
-
     public void setCreationTime(LocalDateTime creationTime) {
         this.creationTime = creationTime;
     }
-
     @Override
     public int compareTo(VoiceSavedDTO o) {
         return o.getCreationTime().compareTo(this.creationTime);

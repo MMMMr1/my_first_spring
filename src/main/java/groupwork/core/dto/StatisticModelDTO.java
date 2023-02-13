@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 public class StatisticModelDTO {
-
     private final Map<SingerModelDTO, Integer> mapSingers;
     private final Map<GenreModelDTO, Integer> mapGenres;
     private final List<AboutRow> listUsers;

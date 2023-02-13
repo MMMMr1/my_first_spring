@@ -13,7 +13,7 @@ public interface ISingerService {
     List<SingerModelDTO> get();
 
 //    void delete(SingerDTO singerDTO);
-    void delete(long id);
+    void delete(long id, long version);
 
     void insert(SingerDTO singerDTO);
 

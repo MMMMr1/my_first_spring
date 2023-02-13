@@ -34,8 +34,9 @@ public class GenreController {
     protected void doPost(@RequestBody GenreDTO genreDTO) {
         genreService.insert(genreDTO);
     }
-    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    protected void doDelete(@PathVariable("id") Long id) {
-        genreService.delete(id);
+    @RequestMapping(path = "/{id}/version/{version}", method = RequestMethod.DELETE)
+    protected void doDelete(@PathVariable("id") Long id,
+                            @PathVariable("version") Long version) {
+        genreService.delete(id,version);
     }
 }

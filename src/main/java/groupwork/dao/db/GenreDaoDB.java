@@ -36,10 +36,8 @@ public class GenreDaoDB implements IGenreDao {
             }
         }
     }
-
     @Override
     public boolean exist(long id) {
-
         EntityManager entityManager = null;
         try {
             entityManager = manager.getEntityManager();
@@ -47,7 +45,6 @@ public class GenreDaoDB implements IGenreDao {
             Genre genreEntity = entityManager.find(Genre.class, id);
             entityManager.getTransaction().commit();
             return genreEntity != null;
-
         } catch (Exception e) {
             throw new RuntimeException("DataBase error", e);
         } finally {
@@ -64,11 +61,14 @@ public class GenreDaoDB implements IGenreDao {
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
-            genreEntity = entityManager.find(Genre.class, id);
-            if (genreEntity == null) {
+            Genre genre = entityManager.find(Genre.class, id);
+            if (genre == null) {
                 throw new NullPointerException("Delete is not possible. The singer wasn't found in the database");
             }
-            entityManager.remove(genreEntity);
+            if (genre.getVersion() != genreEntity.getVersion()) {
+                throw new OptimisticLockException("version is incorrect");
+            }
+            entityManager.remove(genre);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
@@ -79,7 +79,6 @@ public class GenreDaoDB implements IGenreDao {
             }
         }
     }
-
     @Override
     public void insert(Genre genreEntity) {
         EntityManager entityManager = null;
@@ -96,7 +95,6 @@ public class GenreDaoDB implements IGenreDao {
             }
         }
     }
-
     @Override
     public void update(Genre genreEntity) {
         long id = genreEntity.getId();
@@ -105,17 +103,14 @@ public class GenreDaoDB implements IGenreDao {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
 
-            Genre genreEntityDB = entityManager.find(Genre.class, id);
-            if (genreEntityDB == null) {
+            Genre genre = entityManager.find(Genre.class, id);
+            if (genre == null) {
                 throw new NullPointerException("Update is not possible. " +
                         "The genre wasn't found in the database");
             }
-            if (genreEntityDB.getVersion() != genreEntity.getVersion()) {
-                throw new OptimisticLockException("try again");
+            if (genre.getVersion() != genreEntity.getVersion()) {
+                throw new OptimisticLockException("version is incorrect");
             }
-//
-//            genreEntityDB.setName(genreEntity.getName());
-//            entityManager.flush();
             entityManager.merge(genreEntity);
             entityManager.getTransaction().commit();
 
@@ -128,20 +123,18 @@ public class GenreDaoDB implements IGenreDao {
             }
         }
     }
-
     @Override
     public Genre get(long id) {
         EntityManager entityManager = null;
-        Genre genreEntity;
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
-            genreEntity = entityManager.find(Genre.class, id);
+            Genre genre = entityManager.find(Genre.class, id);
             entityManager.getTransaction().commit();
-            if (genreEntity == null) {
+            if (genre == null) {
                 throw new NullPointerException("The genre wasn't found in the database");
             }
-            return genreEntity;
+            return genre;
         } catch (Exception e) {
             throw new RuntimeException("DataBase error", e);
         } finally {
