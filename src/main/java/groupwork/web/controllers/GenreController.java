@@ -1,5 +1,7 @@
 package groupwork.web.controllers;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import groupwork.core.View;
 import groupwork.core.dto.Genre.GenreCardModelDTO;
 import groupwork.core.dto.Genre.GenreDTO;
 import groupwork.core.dto.Genre.GenreModelDTO;
@@ -18,6 +20,7 @@ public class GenreController {
     public List<GenreModelDTO> getList(){
         return genreService.get();
     }
+//    @JsonView(View.UI.class)
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public GenreCardModelDTO card(@PathVariable("id") Long id){
         return genreService.get(id);

@@ -34,8 +34,7 @@ public class StatisticsService implements IStatisticsService {
     public List<SingerStatisticModelDTO> getTopSinger(){
         Map<SingerModelDTO, Integer> mapSinger = new HashMap<>();
         List<SingerModelDTO> singerDTOS = singerService.get();
-        singerDTOS.stream()
-                .forEach(s -> mapSinger.put(s,0));
+        singerDTOS.stream().forEach(s -> mapSinger.put(s,0));
 
         for (VoiceModelDTO savedVoiceDTO : votesService.get()) {
             SingerModelDTO singer = savedVoiceDTO.getSinger();
@@ -54,8 +53,7 @@ public class StatisticsService implements IStatisticsService {
     public  List<GenreStatisticModelDTO> getTopGenre(){
         Map<GenreModelDTO, Integer> mapGenre = new HashMap<>();
         List<GenreModelDTO> genreDTOS = genreService.get();
-        genreDTOS.stream()
-                .forEach(s -> mapGenre.put(s,0));
+        genreDTOS.stream().forEach(s -> mapGenre.put(s,0));
 
         for (VoiceModelDTO savedVoiceDTO : votesService.get()) {
             List<GenreModelDTO> idGenre = savedVoiceDTO.getGenres();

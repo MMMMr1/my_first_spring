@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import javax.servlet.http.HttpServlet;
 @RestController
 @RequestMapping("/answer")
-public class AnswerController extends HttpServlet {
+public class AnswerController {
     private  IVoteService voteService;
     public AnswerController(IVoteService voteService) {
         this.voteService = voteService;

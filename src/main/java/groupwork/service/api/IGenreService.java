@@ -17,6 +17,6 @@ public interface IGenreService {
     void insert(GenreDTO genreDTO);
 
     void update(long id, long version, GenreDTO genreDTO);
-    GenreCardModelDTO get(long id);
+    GenreCardModelDTO  get(long id);
 
 }
