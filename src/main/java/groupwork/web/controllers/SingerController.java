@@ -1,8 +1,8 @@
 package groupwork.web.controllers;
 
-import groupwork.core.dto.SingerCardModelDTO;
-import groupwork.core.dto.SingerDTO;
-import groupwork.core.dto.SingerModelDTO;
+import groupwork.core.dto.Singer.SingerCardModelDTO;
+import groupwork.core.dto.Singer.SingerDTO;
+import groupwork.core.dto.Singer.SingerModelDTO;
 import groupwork.service.api.ISingerService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,7 @@ public class SingerController {
     public SingerController(ISingerService singerService) {
         this.singerService = singerService;
     }
-    @RequestMapping(method = RequestMethod.GET)//    @AliasFor
+    @RequestMapping(method = RequestMethod.GET)
     public List<SingerModelDTO> getList() {
         return singerService.get();
     }

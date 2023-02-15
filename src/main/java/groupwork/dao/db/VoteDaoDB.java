@@ -1,7 +1,7 @@
 package groupwork.dao.db;
 
 import groupwork.dao.api.IVoteDao;
-import groupwork.dao.db.orm.api.IManager;
+import groupwork.dao.orm.api.IManager;
 import groupwork.entity.Voice;
 
 import javax.persistence.EntityManager;

@@ -28,10 +28,10 @@ public class Genre {
         this.id = id;
         this.name = name;
     }
-    public Genre(long id, long version) {
-        this.id = id;
-        this.version = version;
-    }
+//    public Genre(long id, long version) {
+//        this.id = id;
+//        this.version = version;
+//    }
     public Genre(String name) {
         this.name = name;
     }
@@ -43,5 +43,9 @@ public class Genre {
     }
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

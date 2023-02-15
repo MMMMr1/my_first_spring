@@ -1,10 +1,11 @@
 package groupwork.service.api;
 
-import groupwork.core.dto.*;
+import groupwork.core.dto.Genre.GenreStatisticModelDTO;
+import groupwork.core.dto.Singer.SingerStatisticModelDTO;
+import groupwork.core.dto.Statistic.StatisticModelDTO;
+import groupwork.core.dto.Voice.AboutRow;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
 public interface IStatisticsService {
 

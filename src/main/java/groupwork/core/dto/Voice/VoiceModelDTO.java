@@ -1,4 +1,7 @@
-package groupwork.core.dto;
+package groupwork.core.dto.Voice;
+
+import groupwork.core.dto.Genre.GenreModelDTO;
+import groupwork.core.dto.Singer.SingerModelDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;

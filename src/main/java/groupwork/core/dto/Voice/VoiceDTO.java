@@ -1,4 +1,4 @@
-package groupwork.core.dto;
+package groupwork.core.dto.Voice;
 
 import java.util.Arrays;
 import java.util.Objects;

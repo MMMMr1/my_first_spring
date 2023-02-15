@@ -32,11 +32,11 @@ public class Singer {
         this.id = id;
         this.name = name;
     }
-
-    public Singer(long id, long version) {
-        this.id = id;
-        this.version = version;
-    }
+//
+//    public Singer(long id, long version) {
+//        this.id = id;
+//        this.version = version;
+//    }
     public Singer(String name) {
         this.name = name;
     }
@@ -51,4 +51,7 @@ public class Singer {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

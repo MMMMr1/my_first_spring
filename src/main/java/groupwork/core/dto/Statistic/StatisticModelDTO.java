@@ -1,4 +1,8 @@
-package groupwork.core.dto;
+package groupwork.core.dto.Statistic;
+
+import groupwork.core.dto.Genre.GenreStatisticModelDTO;
+import groupwork.core.dto.Singer.SingerStatisticModelDTO;
+import groupwork.core.dto.Voice.AboutRow;
 
 import java.util.List;
 

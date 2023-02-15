@@ -1,28 +1,13 @@
 package groupwork;
 
-import groupwork.core.dto.*;
-import groupwork.dao.db.GenreDaoDB;
-import groupwork.dao.db.SingerDaoDB;
-import groupwork.dao.db.orm.manager.Manager;
-import groupwork.service.GenreService;
-import groupwork.service.SingerService;
-import groupwork.service.StatisticsService;
-import groupwork.service.VoteService;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
 
 
 public class MainSpring {
     static Logger logger = LogManager.getLogger();
 
-   public static void main(String[] args) {
+//   public static void main(String[] args) {
 //        try (var context = new ClassPathXmlApplicationContext("main-context.xml")) {
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("main-context.xml");
@@ -111,7 +96,7 @@ public class MainSpring {
 //              List<AboutRow> aboutUser = statisticsService.getAboutUser();
 //              logger.log(Level.INFO, "--////////----------!!!!!!!!!---------------> getAll getAboutUser");
 //              aboutUser.forEach((k ) -> System.out.println(k.getMessage() + " " + k.getCreationTime() ));
-         }
+//         }
     }
 
 

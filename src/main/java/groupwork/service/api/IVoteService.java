@@ -1,7 +1,7 @@
 package groupwork.service.api;
 
-import groupwork.core.dto.VoiceModelDTO;
-import groupwork.core.dto.VoiceDTO;
+import groupwork.core.dto.Voice.VoiceModelDTO;
+import groupwork.core.dto.Voice.VoiceDTO;
 
 import java.util.List;
 

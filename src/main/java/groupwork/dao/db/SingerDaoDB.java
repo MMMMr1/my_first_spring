@@ -1,13 +1,12 @@
 package groupwork.dao.db;
 
 import groupwork.dao.api.ISingerDao;
-import groupwork.dao.db.orm.api.IManager;
+import groupwork.dao.orm.api.IManager;
 import groupwork.entity.Singer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.persistence.EntityManager;
-import javax.persistence.OptimisticLockException;
 import java.util.List;
 
 public class SingerDaoDB implements ISingerDao {
@@ -23,7 +22,6 @@ public class SingerDaoDB implements ISingerDao {
         EntityManager entityManager = null;
         List<Singer> resultList;
         logger.info("info");
-
         try {
             entityManager = manager.getEntityManager();
             entityManager.getTransaction().begin();
@@ -32,7 +30,7 @@ public class SingerDaoDB implements ISingerDao {
             return resultList;
         } catch (Exception e) {
             logger.error("first log");
-            throw new RuntimeException("DataBase error", e);
+            throw new RuntimeException("Exception in the database", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -49,7 +47,7 @@ public class SingerDaoDB implements ISingerDao {
             entityManager.getTransaction().commit();
             return singerEntity != null;
         } catch (Exception e) {
-            throw new RuntimeException("DataBase error", e);
+            throw new RuntimeException("Exception in the database", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -65,16 +63,22 @@ public class SingerDaoDB implements ISingerDao {
             entityManager.getTransaction().begin();
             Singer singer = entityManager.find(Singer.class, id);
             if (singer == null) {
-                throw new NullPointerException("Delete is not possible. The singer wasn't found in the database");
+                throw new NullPointerException("Delete is not possible." +
+                        "The performer with id = "+id+
+                        " was not found in the database");
             }
-            if (singer.getVersion() != singerEntity.getVersion()) {
-                throw new OptimisticLockException("version is incorrect");
-            }
+//            if (singer.getVersion() != singerEntity.getVersion()) {
+//                throw new OptimisticLockException("version is incorrect");
+//            }
             entityManager.remove(singer);
             entityManager.getTransaction().commit();
+        }catch (NullPointerException e){
+            throw e;
         } catch (Exception e) {
-            entityManager.getTransaction().rollback();
-            throw new RuntimeException("DataBase error", e);
+            if(entityManager != null && entityManager.getTransaction().isActive()) {
+                entityManager.getTransaction().rollback();
+            }
+            throw new RuntimeException("Exception in the database", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -90,7 +94,7 @@ public class SingerDaoDB implements ISingerDao {
             entityManager.persist(singerEntity);
             entityManager.getTransaction().commit();
         } catch (RuntimeException e) {
-            throw new RuntimeException("DataBase error", e);
+            throw new RuntimeException("Exception in the database", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -108,18 +112,22 @@ public class SingerDaoDB implements ISingerDao {
             Singer singer = entityManager.find(Singer.class, id);
 
             if (singer == null) {
-                throw new NullPointerException("Update is not possible. " +
-                        "The singer wasn't found in the database");
+                throw new NullPointerException("Update is not possible. "+
+                        "The performer with id = "+id+
+                        " was not found in the database");
             }
-            if (singer.getVersion() != singerEntity.getVersion()) {
-                throw new OptimisticLockException("try again");
-            }
+//            if (singer.getVersion() != singerEntity.getVersion()) {
+//                throw new OptimisticLockException("try again");
+//            }
             entityManager.merge(singerEntity);
             entityManager.getTransaction().commit();
-
+        }catch (NullPointerException e){
+            throw e;
         } catch (Exception e) {
-            entityManager.getTransaction().rollback();
-            throw new RuntimeException("DataBase error", e);
+            if(entityManager != null && entityManager.getTransaction().isActive()) {
+                entityManager.getTransaction().rollback();
+            }
+            throw new RuntimeException("Exception in the database", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();
@@ -134,13 +142,15 @@ public class SingerDaoDB implements ISingerDao {
             entityManager.getTransaction().begin();
             Singer singer = entityManager.find(Singer.class, id);
             entityManager.getTransaction().commit();
-
             if (singer == null) {
-                throw new NullPointerException("The singer wasn't found in the database");
+                throw new NullPointerException("The performer with id = "+id+
+                        " was not found in the database");
             }
             return singer;
+        }catch (NullPointerException e){
+            throw e;
         } catch (Exception e) {
-            throw new RuntimeException("DataBase error", e);
+            throw new RuntimeException("Exception in the database", e);
         } finally {
             if (entityManager != null && entityManager.isOpen()) {
                 entityManager.close();

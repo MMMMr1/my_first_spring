@@ -1,8 +1,8 @@
 package groupwork.web.controllers;
 
-import groupwork.core.dto.GenreCardModelDTO;
-import groupwork.core.dto.GenreDTO;
-import groupwork.core.dto.GenreModelDTO;
+import groupwork.core.dto.Genre.GenreCardModelDTO;
+import groupwork.core.dto.Genre.GenreDTO;
+import groupwork.core.dto.Genre.GenreModelDTO;
 import groupwork.service.api.IGenreService;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,8 +26,6 @@ public class GenreController {
     protected void doPut(@PathVariable("id") Long id,
                          @PathVariable("version") Long version,
                          @RequestBody GenreDTO genreDTO) {
-        //оптимистические блокировки
-//поменять genreDto на объект только с именем
       genreService.update(id,version,genreDTO);
     }
     @RequestMapping(method = RequestMethod.POST)

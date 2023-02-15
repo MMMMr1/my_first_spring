@@ -1,4 +1,4 @@
-package groupwork.core.dto;
+package groupwork.core.dto.Genre;
 
 import java.util.Objects;
 

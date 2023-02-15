@@ -1,6 +1,6 @@
 package groupwork.web.controllers;
 
-import groupwork.core.dto.VoiceDTO;
+import groupwork.core.dto.Voice.VoiceDTO;
 import groupwork.service.api.IVoteService;
 
 import org.springframework.web.bind.annotation.RequestBody;

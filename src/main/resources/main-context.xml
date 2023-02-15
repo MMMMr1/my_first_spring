@@ -31,7 +31,7 @@
         <constructor-arg name="singerService" ref="singerService"/>
         <constructor-arg name="genreService" ref="genreService"/>
     </bean>
-    <bean id="manager" class="groupwork.dao.db.orm.manager.Manager"
+    <bean id="manager" class="groupwork.dao.orm.manager.Manager"
         destroy-method = "close">
     </bean>
 </beans>

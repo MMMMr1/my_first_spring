@@ -1,4 +1,4 @@
-package groupwork.core.dto;
+package groupwork.core.dto.Voice;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

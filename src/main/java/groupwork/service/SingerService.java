@@ -1,14 +1,12 @@
 package groupwork.service;
 
-import groupwork.core.dto.GenreModelDTO;
-import groupwork.core.dto.SingerCardModelDTO;
-import groupwork.core.dto.SingerModelDTO;
+import groupwork.core.dto.Singer.SingerCardModelDTO;
+import groupwork.core.dto.Singer.SingerModelDTO;
 import groupwork.dao.api.ISingerDao;
-import groupwork.core.dto.SingerDTO;
+import groupwork.core.dto.Singer.SingerDTO;
 import groupwork.entity.Singer;
 import groupwork.service.api.ISingerService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,9 +31,11 @@ public class SingerService implements ISingerService {
         checkId(id);
         Singer singer = dao.get(id);
         if (singer != null && version == singer.getVersion()) {
-            dao.delete(new Singer(id,version));
+            dao.delete(singer);
         } else {
-            throw new IllegalArgumentException("The performer with such id is not existed");
+            throw new IllegalArgumentException("Delete is not possible." +
+                    "The performer, with id ="+id+" and version = "
+                    +version+", was not found in the database");
         }
     }
     @Override
@@ -51,9 +51,12 @@ public class SingerService implements ISingerService {
         checkId(id);
         Singer singerDao = dao.get(id);
         if (singerDao != null && singerDao.getVersion() == version) {
-            dao.update(new Singer(id, version, name));
+            singerDao.setName(name);
+            dao.update(singerDao);
         } else {
-            throw new IllegalArgumentException("The data is incorrect");
+            throw new IllegalArgumentException("Update is not possible." +
+                    "The performer, with id ="+id+" and version = "
+                    +version+", was not found in the database");
         }
     }
     @Override
@@ -71,7 +74,7 @@ public class SingerService implements ISingerService {
     }
     private void checkId(long id) {
         if (id <= 0) {
-            throw new IllegalArgumentException("The performer number is incorrect");
+            throw new IllegalArgumentException("The performer id = "+id+ " is incorrect");
         }
     }
 }
