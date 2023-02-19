@@ -1,4 +1,4 @@
-package groupwork.core.dto.Voice;
+package groupwork.core.dto.voice;
 
 import java.time.LocalDateTime;
 

@@ -1,6 +1,6 @@
 package groupwork.web.controllers;
 
-import groupwork.core.dto.Statistic.StatisticModelDTO;
+import groupwork.core.dto.statistic.StatisticModelDTO;
 import groupwork.service.api.IStatisticsService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

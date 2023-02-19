@@ -1,9 +1,9 @@
 package groupwork.service;
 
-import groupwork.core.dto.Genre.GenreCardModelDTO;
-import groupwork.core.dto.Genre.GenreModelDTO;
+import groupwork.core.dto.genre.GenreCardModelDTO;
+import groupwork.core.dto.genre.GenreModelDTO;
 import groupwork.dao.api.IGenreDao;
-import groupwork.core.dto.Genre.GenreDTO;
+import groupwork.core.dto.genre.GenreDTO;
 import groupwork.entity.Genre;
 import groupwork.service.api.IGenreService;
 

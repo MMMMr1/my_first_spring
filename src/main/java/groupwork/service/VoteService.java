@@ -1,12 +1,12 @@
 package groupwork.service;
 
-import groupwork.core.dto.Genre.GenreCardModelDTO;
-import groupwork.core.dto.Genre.GenreModelDTO;
-import groupwork.core.dto.Singer.SingerCardModelDTO;
-import groupwork.core.dto.Singer.SingerModelDTO;
-import groupwork.core.dto.Voice.VoiceDTO;
-import groupwork.core.dto.Voice.VoiceModelDTO;
-import groupwork.core.dto.Voice.VoiceSavedDTO;
+import groupwork.core.dto.genre.GenreCardModelDTO;
+import groupwork.core.dto.genre.GenreModelDTO;
+import groupwork.core.dto.singer.SingerCardModelDTO;
+import groupwork.core.dto.singer.SingerModelDTO;
+import groupwork.core.dto.voice.VoiceDTO;
+import groupwork.core.dto.voice.VoiceModelDTO;
+import groupwork.core.dto.voice.VoiceSavedDTO;
 import groupwork.dao.api.IVoteDao;
 import groupwork.entity.Genre;
 import groupwork.entity.Voice;

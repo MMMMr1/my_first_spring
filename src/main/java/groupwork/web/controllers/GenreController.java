@@ -1,11 +1,11 @@
 package groupwork.web.controllers;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import groupwork.core.View;
-import groupwork.core.dto.Genre.GenreCardModelDTO;
-import groupwork.core.dto.Genre.GenreDTO;
-import groupwork.core.dto.Genre.GenreModelDTO;
+import groupwork.core.dto.genre.GenreCardModelDTO;
+import groupwork.core.dto.genre.GenreDTO;
+import groupwork.core.dto.genre.GenreModelDTO;
 import groupwork.service.api.IGenreService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,12 +18,13 @@ public class GenreController {
     }
     @RequestMapping(method = RequestMethod.GET)
     public List<GenreModelDTO> getList(){
-        return genreService.get();
+            return genreService.get();
     }
 //    @JsonView(View.UI.class)
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public GenreCardModelDTO card(@PathVariable("id") Long id){
-        return genreService.get(id);
+    public  ResponseEntity<  GenreCardModelDTO > card(@PathVariable("id") Long id){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(genreService.get(id));
     }
     @RequestMapping(path = "/{id}/version/{version}", method = RequestMethod.PUT)
     protected void doPut(@PathVariable("id") Long id,
@@ -32,8 +33,9 @@ public class GenreController {
       genreService.update(id,version,genreDTO);
     }
     @RequestMapping(method = RequestMethod.POST)
-    protected void doPost(@RequestBody GenreDTO genreDTO) {
+    protected ResponseEntity<?> doPost(@RequestBody GenreDTO genreDTO) {
         genreService.insert(genreDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     @RequestMapping(path = "/{id}/version/{version}", method = RequestMethod.DELETE)
     protected void doDelete(@PathVariable("id") Long id,

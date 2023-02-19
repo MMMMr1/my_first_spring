@@ -1,8 +1,8 @@
 package groupwork.web.controllers;
 
-import groupwork.core.dto.Singer.SingerCardModelDTO;
-import groupwork.core.dto.Singer.SingerDTO;
-import groupwork.core.dto.Singer.SingerModelDTO;
+import groupwork.core.dto.singer.SingerCardModelDTO;
+import groupwork.core.dto.singer.SingerDTO;
+import groupwork.core.dto.singer.SingerModelDTO;
 import groupwork.service.api.ISingerService;
 import org.springframework.web.bind.annotation.*;
 

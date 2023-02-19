@@ -1,4 +1,4 @@
-package groupwork.core.dto.Singer;
+package groupwork.core.dto.singer;
 
 
 public class SingerCardModelDTO extends SingerModelDTO {

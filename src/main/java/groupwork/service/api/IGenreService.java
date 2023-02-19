@@ -1,8 +1,8 @@
 package groupwork.service.api;
 
-import groupwork.core.dto.Genre.GenreCardModelDTO;
-import groupwork.core.dto.Genre.GenreDTO;
-import groupwork.core.dto.Genre.GenreModelDTO;
+import groupwork.core.dto.genre.GenreCardModelDTO;
+import groupwork.core.dto.genre.GenreDTO;
+import groupwork.core.dto.genre.GenreModelDTO;
 
 import java.util.List;
 

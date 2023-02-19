@@ -1,4 +1,4 @@
-package groupwork.core.dto.Genre;
+package groupwork.core.dto.genre;
 
 public class GenreCardModelDTO extends GenreModelDTO {
 

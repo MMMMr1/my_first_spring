@@ -1,15 +1,15 @@
-package groupwork.core.dto.Singer;
+package groupwork.core.dto.genre;
 
 import java.util.Objects;
 
-public class SingerModelDTO {
+public class GenreModelDTO {
     private String name;
     private long id;
-    public SingerModelDTO(String name, long id) {
+    public GenreModelDTO(String name, long id) {
         this.name = name;
         this.id = id;
     }
-    public SingerModelDTO() {
+    public GenreModelDTO() {
     }
     public String getName() {
         return name;
@@ -17,7 +17,9 @@ public class SingerModelDTO {
     public void setName(String name) {
         this.name = name;
     }
-    public long getId() { return id;}
+    public long getId() {
+        return id;
+    }
     public void setId(long id) {
         this.id = id;
     }
@@ -25,8 +27,8 @@ public class SingerModelDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SingerModelDTO singerDTO = (SingerModelDTO) o;
-        return id == singerDTO.id && Objects.equals(name, singerDTO.name);
+        GenreModelDTO genreDTO = (GenreModelDTO) o;
+        return id == genreDTO.id && Objects.equals(name, genreDTO.name);
     }
     @Override
     public int hashCode() {

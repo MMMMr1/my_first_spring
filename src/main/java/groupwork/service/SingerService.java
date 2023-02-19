@@ -1,9 +1,9 @@
 package groupwork.service;
 
-import groupwork.core.dto.Singer.SingerCardModelDTO;
-import groupwork.core.dto.Singer.SingerModelDTO;
+import groupwork.core.dto.singer.SingerCardModelDTO;
+import groupwork.core.dto.singer.SingerModelDTO;
 import groupwork.dao.api.ISingerDao;
-import groupwork.core.dto.Singer.SingerDTO;
+import groupwork.core.dto.singer.SingerDTO;
 import groupwork.entity.Singer;
 import groupwork.service.api.ISingerService;
 

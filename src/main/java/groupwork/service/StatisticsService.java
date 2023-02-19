@@ -1,12 +1,12 @@
 package groupwork.service;
 
-import groupwork.core.dto.Genre.GenreModelDTO;
-import groupwork.core.dto.Genre.GenreStatisticModelDTO;
-import groupwork.core.dto.Singer.SingerModelDTO;
-import groupwork.core.dto.Singer.SingerStatisticModelDTO;
-import groupwork.core.dto.Statistic.StatisticModelDTO;
-import groupwork.core.dto.Voice.AboutRow;
-import groupwork.core.dto.Voice.VoiceModelDTO;
+import groupwork.core.dto.genre.GenreModelDTO;
+import groupwork.core.dto.genre.GenreStatisticModelDTO;
+import groupwork.core.dto.singer.SingerModelDTO;
+import groupwork.core.dto.singer.SingerStatisticModelDTO;
+import groupwork.core.dto.statistic.StatisticModelDTO;
+import groupwork.core.dto.voice.AboutRow;
+import groupwork.core.dto.voice.VoiceModelDTO;
 import groupwork.service.api.IGenreService;
 import groupwork.service.api.ISingerService;
 import groupwork.service.api.IStatisticsService;
